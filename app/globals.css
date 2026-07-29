@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --monsrow-bg: #F5F4F0;
+    --monsrow-card-bg: #FFFFFF;
+    --monsrow-coral: #FF5A60;
+    --monsrow-coral-hover: #E0484E;
+    --monsrow-coral-light: #FFF0F1;
+    --monsrow-wine: #4B1220;
+    --monsrow-wine-dark: #310B14;
+    --monsrow-dark: #121316;
+    --monsrow-text: #1C1D21;
+    --monsrow-muted: #626570;
+    --monsrow-border: #E2E0D8;
+  }
+
+  body {
+    background-color: var(--monsrow-bg);
+    color: var(--monsrow-text);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Monsrow geometric dot & shape background patterns */
+.bg-monsrow-dots {
+  background-image: radial-gradient(#C8C4B7 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.bg-monsrow-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(200, 196, 183, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 196, 183, 0.2) 1px, transparent 1px);
+}
+
+/* Infinite Marquee Carousel Animation */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-reverse 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.animate-marquee-slow:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EFEA;
+}
+::-webkit-scrollbar-thumb {
+  background: #C0BDB2;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A09D92;
+}
+
+/* Custom pulse animations */
+@keyframes signal-ping {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.animate-signal {
+  animation: signal-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
