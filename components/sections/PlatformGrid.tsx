@@ -82,13 +82,13 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
             <span>PLATFORM</span>
           </div>
           <ScrollReveal
-            baseOpacity={0.3}
+            baseOpacity={0.35}
             enableBlur={true}
             baseRotation={2}
             blurStrength={3}
-            start="top 95%"
-            rotationEnd="top 75%"
-            wordAnimationEnd="top 70%"
+            start="top 90%"
+            rotationEnd="top 60%"
+            wordAnimationEnd="top 50%"
             textClassName="text-3xl sm:text-5xl font-normal text-[#1C1D21] font-display tracking-tight leading-[1.08]"
           >
             End-to-end risk management starts here

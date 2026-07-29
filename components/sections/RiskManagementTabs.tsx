@@ -105,7 +105,7 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
   const progress = getProgressStyles();
 
   return (
-    <section id="platform-section" className="bg-[#F5F4F0] text-[#1C1D21] py-16 sm:py-24 border-b border-[#E2E0D8] relative">
+    <section id="platform-section" className="bg-[#ECEBE6] text-[#1C1D21] py-16 sm:py-24 border-b border-[#E2E0D8] relative">
       {/* Background Muted Geometric Pattern on the right edge matching Image 1 */}
       <div className="absolute top-12 right-4 sm:right-12 pointer-events-none opacity-40 select-none hidden lg:block">
         <div className="grid grid-cols-2 gap-4 text-gray-300">
@@ -136,7 +136,7 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
         {/* =========================================================
             STICKY TIMELINE & CATEGORY PILLS BAR (Matching Images 1, 2, 3)
            ========================================================= */}
-        <div className="sticky top-[72px] sm:top-[80px] z-30 bg-[#F5F4F0]/95 backdrop-blur-md pt-4 pb-6 transition-all duration-300 border-b border-gray-300/60 mb-8">
+        <div className="sticky top-[72px] bg-[#ECEBE6] sm:top-[80px] z-30 pt-4 pb-6 transition-all duration-300  mb-8">
           
           {/* Top Timeline Line with Triangle Markers */}
           <div className="relative w-full h-1.5 bg-gray-300/80 rounded-full mb-6">
@@ -187,7 +187,7 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
               onClick={() => handleTabClick('onboarding')}
               className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer border ${
                 activeTab === 'onboarding'
-                  ? 'border-[#1C1D21] text-[#1C1D21] bg-white font-semibold shadow-xs scale-105'
+                  ? 'border-[#1C1D21] text-[#1C1D21]  font-semibold shadow-xs scale-105'
                   : 'border-gray-300/80 text-gray-500 hover:text-[#1C1D21] hover:border-gray-400 bg-transparent'
               }`}
               data-cursor="ONBOARDING"

@@ -21,7 +21,7 @@ export default function DataPartners({ onOpenWorkflow }: DataPartnersProps) {
   ];
 
   return (
-    <section id="data-partners" className="bg-[#F5F4F0] py-16 lg:py-20 border-b border-[#E2E0D8]">
+    <section id="data-partners" className="bg-[#ECEBE6] py-16 lg:py-20 border-b border-[#E2E0D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header matching Image 4 */}

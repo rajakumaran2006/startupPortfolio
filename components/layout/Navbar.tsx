@@ -35,11 +35,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch }: NavbarProps) {
-  const [activeMenu, setActiveMenu] = useState<string | null>('platform');
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState('US');
   const [isMuted, setIsMuted] = useState(false);
 
   const navContainerRef = useRef<HTMLDivElement>(null);
@@ -53,11 +50,11 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch }: Nav
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full pt-3 px-2 sm:px-4 lg:px-6 bg-[#F5F4F0]">
+    <header className="sticky top-0 z-50 w-full pt-1.5 px-2 sm:px-4 lg:px-6 bg-[#F5F4F0]">
       {/* Main Floating Navbar Card Container */}
       <div 
         ref={navContainerRef}
-        className="max-w-[1440px] mx-auto bg-[#F0EFEA] border border-[#E2E0D8] rounded-[24px] sm:rounded-[32px] p-4 sm:p-6 lg:p-7 shadow-xl transition-all duration-300 relative"
+        className="max-w-[1440px] mx-auto bg-[#F0EFEA] border border-[#E2E0D8] rounded-[18px] sm:rounded-[24px] p-2 sm:p-3 lg:p-3.5 shadow-xl transition-all duration-300 relative"
       >
         {/* Top Navbar Row */}
         <div className="flex items-center justify-between gap-4">
@@ -69,7 +66,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch }: Nav
               href="#" 
               onClick={(e) => {
                 e.preventDefault();
-                setActiveMenu(activeMenu ? null : 'platform');
+                setActiveMenu(null);
               }}
               className="flex items-center gap-2.5 group cursor-pointer shrink-0"
             >
@@ -131,20 +128,6 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch }: Nav
               </button>
 
               <button
-                onClick={() => toggleMenu('resources')}
-                className={`flex items-center gap-1.5 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
-                  activeMenu === 'resources' ? 'font-semibold text-[#1C1D21]' : 'text-gray-800 hover:text-black'
-                }`}
-              >
-                <span>Resources</span>
-                {activeMenu === 'resources' ? (
-                  <ChevronUp className="w-4 h-4 text-black stroke-[2.5]" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-gray-700 stroke-[2.5]" />
-                )}
-              </button>
-
-              <button
                 onClick={() => toggleMenu('aboutUs')}
                 className={`flex items-center gap-1.5 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
                   activeMenu === 'aboutUs' ? 'font-semibold text-[#1C1D21]' : 'text-gray-800 hover:text-black'
@@ -162,38 +145,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch }: Nav
 
           {/* Right Menu Controls */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Language Selector */}
-            <div className="relative">
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 text-xs font-semibold text-[#1C1D21] px-2.5 py-2 hover:bg-[#E4E2DC] rounded-full transition-colors cursor-pointer"
-              >
-                <Globe className="w-4 h-4 stroke-[2]" />
-                <span>{selectedLang}</span>
-                <ChevronDown className="w-3.5 h-3.5 stroke-[2]" />
-              </button>
-
-              {langOpen && (
-                <div className="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-lg border border-[#E2E0D8] p-1.5 z-50 text-xs font-medium">
-                  {['US', 'UK', 'EU', 'CA'].map((lang) => (
-                    <button
-                      key={lang}
-                      onClick={() => {
-                        setSelectedLang(lang);
-                        setLangOpen(false);
-                      }}
-                      className={`w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors ${
-                        selectedLang === lang ? 'font-bold bg-gray-50 text-[#FF5A60]' : 'text-gray-700'
-                      }`}
-                    >
-                      Region: {lang}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Audio Sound Effects FX Toggle */}
+            {/* Sleek Sound FX Audio Control Pill Button */}
             <button
               onClick={() => {
                 const nextMuted = !isMuted;
@@ -203,43 +155,23 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch }: Nav
                   soundFX.playClick();
                 }
               }}
-              className={`w-9 h-9 rounded-full border border-gray-400/80 flex items-center justify-center transition-colors cursor-pointer ${
-                isMuted ? 'text-gray-400 bg-gray-200/60' : 'text-[#FF5A60] bg-[#FF5A60]/10 border-[#FF5A60]/40'
+              className={`flex items-center gap-2 text-xs font-bold px-3.5 py-2.5 rounded-full border transition-all cursor-pointer shadow-xs ${
+                isMuted
+                  ? 'text-gray-500 bg-gray-200/80 border-gray-300 hover:bg-gray-300/80'
+                  : 'text-[#1C1D21] bg-[#E4E2DC] border-gray-300 hover:bg-[#DDDCD4]'
               }`}
               title={isMuted ? 'Enable UI Sound Effects' : 'Mute UI Sound Effects'}
             >
-              {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 animate-pulse" />}
-            </button>
-
-            {/* Profile User Icon */}
-            <div className="relative">
-              <button
-                onClick={() => setProfileOpen(!profileOpen)}
-                className="w-9 h-9 rounded-full border border-gray-400/80 flex items-center justify-center text-[#1C1D21] hover:bg-[#E4E2DC] transition-colors cursor-pointer"
-                title="User Account"
-              >
-                <User className="w-4 h-4 stroke-[2]" />
-              </button>
-
-              {profileOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[#E2E0D8] p-2 z-50 text-xs">
-                  <div className="px-3 py-2 border-b border-gray-100">
-                    <div className="font-bold text-gray-900">Demo Organization</div>
-                    <div className="text-[11px] text-gray-500">sandbox@monsrow.com</div>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setProfileOpen(false);
-                      onOpenWorkflow();
-                    }}
-                    className="w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg mt-1 flex items-center justify-between"
-                  >
-                    <span>Launch Decision Builder</span>
-                    <span className="text-[#FF5A60]">▶</span>
-                  </button>
-                </div>
+              {isMuted ? (
+                <>
+                  <VolumeX className="w-4 h-4 text-gray-500" />
+                </>
+              ) : (
+                <>
+                  <Volume2 className="w-4 h-4 text-[#FF5A60] animate-pulse" />
+                </>
               )}
-            </div>
+            </button>
 
             {/* Schedule A Demo Primary Pill Button */}
             <button
@@ -569,7 +501,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch }: Nav
         {mobileOpen && (
           <div className="lg:hidden mt-4 pt-4 border-t border-[#DCDAD2] space-y-4 animate-in slide-in-from-top duration-200">
             <div className="space-y-2">
-              {['platform', 'useCases', 'whoWeWorkWith', 'resources', 'aboutUs'].map((key) => (
+              {['platform', 'useCases', 'whoWeWorkWith', 'aboutUs'].map((key) => (
                 <button
                   key={key}
                   onClick={() => {

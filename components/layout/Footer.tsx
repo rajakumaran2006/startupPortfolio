@@ -36,7 +36,7 @@ export default function Footer({ onOpenDemo }: FooterProps) {
     return () => observer.disconnect();
   }, [hasStartedAnimation]);
 
-  // Typewriter effect logic
+  // Typewriter effect logic + auto-loop
   useEffect(() => {
     if (!hasStartedAnimation) return;
 
@@ -47,12 +47,21 @@ export default function Footer({ onOpenDemo }: FooterProps) {
         }, 80);
         return () => clearTimeout(timeout);
       } else {
-        // Once typing finishes, wait 1.8 seconds then transition to the brand logo view (Image 1)
+        // Once typing finishes, wait 1.8s then show brand
         const transitionTimeout = setTimeout(() => {
           setActiveStage('brand');
         }, 1800);
         return () => clearTimeout(transitionTimeout);
       }
+    }
+
+    if (activeStage === 'brand') {
+      // Show brand for 4s then loop back to typewriter
+      const loopTimeout = setTimeout(() => {
+        setTypedText('');
+        setActiveStage('typewriter');
+      }, 4000);
+      return () => clearTimeout(loopTimeout);
     }
   }, [hasStartedAnimation, typedText, activeStage]);
 
@@ -63,12 +72,6 @@ export default function Footer({ onOpenDemo }: FooterProps) {
     }, 450);
     return () => clearInterval(interval);
   }, []);
-
-  const handleReplay = () => {
-    setTypedText('');
-    setActiveStage('typewriter');
-    setHasStartedAnimation(true);
-  };
 
   return (
     <footer id="footer" className="bg-[#0A0B0D] text-white">
@@ -252,36 +255,7 @@ export default function Footer({ onOpenDemo }: FooterProps) {
         ref={bannerRef}
         className="bg-[#FF5A60] text-[#1C1D21] min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] px-4 sm:px-8 py-16 sm:py-24 flex flex-col justify-between items-center relative overflow-hidden transition-colors duration-700 select-none"
       >
-        {/* Toggle / Replay Controls top-right */}
-        <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
-          <button
-            onClick={() => setActiveStage('typewriter')}
-            className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all ${
-              activeStage === 'typewriter'
-                ? 'bg-[#1C1D21] text-white border-[#1C1D21]'
-                : 'bg-white/20 text-[#1C1D21] border-black/20 hover:bg-white/40'
-            }`}
-          >
-            Typewriter Mode
-          </button>
-          <button
-            onClick={() => setActiveStage('brand')}
-            className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all ${
-              activeStage === 'brand'
-                ? 'bg-[#1C1D21] text-white border-[#1C1D21]'
-                : 'bg-white/20 text-[#1C1D21] border-black/20 hover:bg-white/40'
-            }`}
-          >
-            Brand Mark Mode
-          </button>
-          <button
-            onClick={handleReplay}
-            className="text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-white/30 text-[#1C1D21] hover:bg-white/60 transition-all border border-black/20"
-            title="Replay Entrance Animation"
-          >
-            ↻ Replay
-          </button>
-        </div>
+
 
         {/* Content Area */}
         <div className="w-full max-w-7xl mx-auto my-auto flex flex-col items-center justify-center text-center">
@@ -300,48 +274,19 @@ export default function Footer({ onOpenDemo }: FooterProps) {
             </div>
           )}
 
-          {/* STAGE 2: GIANT ALLOY BRAND LOGO & MARK (Image 1) */}
+          {/* STAGE 2: BRAND BANNER */}
           {activeStage === 'brand' && (
             <div className="animate-fade-in flex flex-col items-center justify-center gap-8 sm:gap-12 w-full py-4">
-              {/* Giant Geometric Triangle Delta Mark + ALLOY Text */}
-              <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 w-full max-w-6xl">
-                {/* Geometric Wireframe Triangle Logo Mark (Image 1) */}
-                <div className="shrink-0 w-20 sm:w-32 lg:w-44 h-20 sm:h-32 lg:h-44">
-                  <svg
-                    viewBox="0 0 100 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-full h-full text-[#1C1D21] stroke-current"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {/* Outer Play Triangle with Smooth Corners */}
-                    <path
-                      d="M 18 12 C 12 9, 6 14, 6 22 L 6 78 C 6 86, 12 91, 18 88 L 86 54 C 92 50, 92 46, 86 42 Z"
-                      strokeWidth="5"
-                    />
-                    {/* Intersecting Geometric Facet Lines */}
-                    <line x1="6" y1="22" x2="86" y2="42" />
-                    <line x1="6" y1="78" x2="86" y2="54" />
-                    <line x1="6" y1="50" x2="86" y2="48" />
-                    <line x1="26" y1="28" x2="26" y2="72" />
-                    <line x1="6" y1="22" x2="48" y2="70" />
-                    <line x1="6" y1="78" x2="48" y2="30" />
-                  </svg>
-                </div>
-
-                {/* Massive MONSROW Typography with Interactive ASCII Text Effect */}
-                <div className="relative w-full max-w-2xl h-36 sm:h-48 lg:h-64 flex items-center justify-center">
-                  <ASCIIText
-                    text="MONSROW"
-                    enableWaves={true}
-                    asciiFontSize={7}
-                    textFontSize={150}
-                    textColor="#1C1D21"
-                    planeBaseHeight={8}
-                  />
-                </div>
+              {/* Massive TEAM MONSROW Typography */}
+              <div className="relative w-full max-w-4xl h-36 sm:h-48 lg:h-64 flex items-center justify-center">
+                <ASCIIText
+                  text="TEAM MONSROW"
+                  enableWaves={true}
+                  asciiFontSize={7}
+                  textFontSize={100}
+                  textColor="#1C1D21"
+                  planeBaseHeight={8}
+                />
               </div>
 
               {/* SCHEDULE A DEMO Button Pill (Image 1 Bottom Center) */}

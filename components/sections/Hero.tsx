@@ -120,7 +120,7 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
   ];
 
   return (
-    <section className="relative bg-[#F5F4F0] pt-8 pb-0 lg:pt-14 lg:pb-0 overflow-hidden border-b border-[#E2E0D8]">
+    <section className="relative bg-[#F5F4F0] pt-4 pb-0 lg:pt-7 lg:pb-0 overflow-hidden border-b border-[#E2E0D8]">
       {/* Background 3D GLSL Hills Canvas */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-50">
         <GLSLHills width="100%" height="100%" cameraZ={125} planeSize={256} speed={0.5} />
@@ -130,31 +130,32 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
       <GeometricBackground />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
           
-          {/* Left Hero Copy */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Centered Hero Copy */}
+          <div className="lg:col-span-12 max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-4">
             
             {/* Title Eyebrow / Description with TrueFocus animation */}
-            <div className="text-left font-display">
+            <div className="text-center font-display w-full flex justify-center">
               <TrueFocus
-                sentence="Full-lifecycle identity & fraud intelligence"
+                sentence="FULL-LIFECYCLE IDENTITY & FRAUD INTELLIGENCE"
                 borderColor="#FF5A60"
                 glowColor="rgba(255, 90, 96, 0.6)"
-                animationDuration={0.6}
-                pauseBetweenAnimations={1.2}
+                blurAmount={1.5}
+                animationDuration={0.4}
+                pauseBetweenAnimations={1.0}
               />
             </div>
 
-            <p className="text-lg sm:text-xl text-[#626570] font-normal leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl text-[#626570] font-normal leading-relaxed max-w-2xl text-center">
               Team Monsrow is the AI-powered identity and fraud prevention platform that accelerates onboarding, stops fraud, and simplifies compliance across the customer lifecycle.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <button
                 onClick={onOpenDemo}
-                className="bg-[#1C1D21] hover:bg-[#FF5A60] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-7 py-4 rounded-full flex items-center gap-2 transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0 group"
+                className="bg-[#1C1D21] hover:bg-[#FF5A60] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-7 py-4 rounded-full flex items-center gap-2 transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
               >
                 <span>SCHEDULE A DEMO</span>
                 <span className="text-[#FF5A60] group-hover:text-white transition-colors">▶</span>
@@ -162,7 +163,7 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
 
               <button
                 onClick={onOpenWorkflow}
-                className="bg-[#FF5A60] hover:bg-[#E0484E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-7 py-4 rounded-full flex items-center gap-2 transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0"
+                className="bg-[#FF5A60] hover:bg-[#E0484E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-7 py-4 rounded-full flex items-center gap-2 transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <span>SEE HOW IT WORKS</span>
                 <span className="text-white">▶</span>
@@ -170,9 +171,9 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
             </div>
 
             {/* Micro Badge / Stat Indicator */}
-            <div className="pt-4 flex items-center gap-6 text-xs text-gray-500 font-medium">
+            <div className="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-500 font-medium">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-black" />
                 <span>99.99% Engine Uptime</span>
               </div>
               <div className="flex items-center gap-2">
@@ -185,11 +186,6 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
               </div>
             </div>
 
-          </div>
-
-          {/* Right Side Fingerprint Identity Orbit Component (Matching Reference Image) */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            <IdentityFingerprintOrbit onOpenWorkflow={onOpenWorkflow} />
           </div>
 
         </div>

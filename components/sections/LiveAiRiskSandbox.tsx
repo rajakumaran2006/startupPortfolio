@@ -81,12 +81,12 @@ export default function LiveAiRiskSandbox() {
         
         {/* Header */}
         <div className="mb-12 space-y-3 max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-[#FF5A60] text-white font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>INTERACTIVE MONSROW AI ENGINE</span>
+          <div className="flex items-center gap-1.5 text-[#FF5A60] font-bold text-xs uppercase tracking-widest">
+            <span className="text-[10px]">▲</span>
+            <span>AI RISK SANDBOX</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-display tracking-tight leading-[1.08]">
-            Tailor your custom risk orchestration architecture in seconds
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-normal text-white font-display tracking-tight leading-[1.08]">
+            Tailor your custom risk orchestration architecture
           </h2>
           <p className="text-base text-gray-400 leading-relaxed">
             Test Team Monsrow&apos;s Actionable AI logic on your specific institution profile. Select a scenario below or enter your operational requirements to generate an end-to-end data partner &amp; decision pipeline.
