@@ -24,89 +24,89 @@ export default function MetricsGrid() {
     {
       id: 'incredible',
       metric: '90%',
-      label: 'Account openings automated',
-      company: 'IncredibleBank',
-      bgColor: 'bg-[#FF5A60]', // Vibrant Coral Red (Image 3)
+      label: 'Software & app workflow automation',
+      company: 'Enterprise Client',
+      bgColor: 'bg-[#FF5A60]', // Vibrant Coral Red
       logoComponent: (
         <span className="font-extrabold text-2xl tracking-tighter text-[#1C1D21]">
-          incrediblebank<span className="text-xs font-normal align-top font-sans">™</span>
+          TechScale<span className="text-xs font-normal align-top font-sans">™</span>
         </span>
       ),
-      storyTitle: 'IncredibleBank Automates 90% of Account Openings in Real-Time',
-      storySummary: 'IncredibleBank replaced manual KYC/KYB backlogs with Team Monsrow’s automated decisioning engine, reducing onboarding latency from 48 hours to under 30 seconds while maintaining strict regulatory compliance.',
+      storyTitle: 'TechScale Automates 90% of Software Workflows',
+      storySummary: 'TechScale modernized their legacy systems with Team Monsrow custom enterprise software and ERP platforms, cutting operational latency and boosting engineering delivery speed.',
       keyResults: [
-        '90% auto-approval rate for compliant applicants',
-        'Reduced customer acquisition drop-off by 42%',
-        'Seamless integration with core banking stack'
+        '90% automated workflow processing',
+        'Reduced customer drop-off by 42%',
+        'Seamless API integration across cloud stack'
       ]
     },
     {
       id: 'suncoast',
       metric: '35%',
-      label: 'Decrease in fraud losses',
-      company: 'Suncoast Credit Union',
-      bgColor: 'bg-[#FFA0AF]', // Soft Coral Pink (Image 3)
+      label: 'IoT hardware efficiency boost',
+      company: 'SmartFactory Corp',
+      bgColor: 'bg-[#FFA0AF]', // Soft Coral Pink
       logoComponent: (
         <div className="flex items-center gap-2 text-[#1C1D21]">
           <div className="w-8 h-8 rounded-full bg-[#1C1D21] p-0.5 shrink-0">
             <div className="w-full h-full rounded-full border-2 border-[#FFA0AF] bg-[#1C1D21]" />
           </div>
           <div className="flex flex-col text-left leading-none">
-            <span className="font-black text-base uppercase tracking-tight">Suncoast</span>
-            <span className="text-[11px] font-bold">Credit Union</span>
+            <span className="font-black text-base uppercase tracking-tight">SmartFactory</span>
+            <span className="text-[11px] font-bold">IoT &amp; Automation</span>
           </div>
         </div>
       ),
-      storyTitle: 'Suncoast Credit Union Cuts Fraud Loss by 35% with Behavioral Signals',
-      storySummary: 'By layering Fraud Signal ML and device telemetry into their credit union onboarding workflows, Suncoast intercepted synthetic identity networks before account funding.',
+      storyTitle: 'SmartFactory Increases Industrial Efficiency by 35% with IoT Systems',
+      storySummary: 'By deploying Team Monsrow embedded IoT hardware sensors and automated telemetry, SmartFactory optimized manufacturing lines and eliminated machine downtime.',
       keyResults: [
-        '35% reduction in first-party and synthetic fraud losses',
-        'Zero impact on legitimate member approval friction',
-        'Saved $2.4M annually in manual review bandwidth'
+        '35% boost in hardware plant throughput',
+        'Real-time predictive maintenance monitoring',
+        'Saved $2.4M annually in operational downtime'
       ]
     },
     {
       id: 'consumers',
       metric: '5x',
-      label: 'Fraud savings per dollar spent',
-      company: 'Consumers Credit Union',
-      bgColor: 'bg-[#FF5A60]', // Vibrant Coral Red (Image 3)
+      label: 'Digital marketing lead ROI',
+      company: 'Global Retail',
+      bgColor: 'bg-[#FF5A60]', // Vibrant Coral Red
       logoComponent: (
         <div className="flex items-center gap-1.5 text-[#1C1D21]">
           <svg className="w-7 h-7 text-[#1C1D21] fill-current shrink-0" viewBox="0 0 24 24">
             <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
           </svg>
           <div className="flex flex-col text-left leading-none">
-            <span className="font-black text-base tracking-tight">consumers</span>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-900">credit union</span>
+            <span className="font-black text-base tracking-tight">GlobalBrands</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-900">Digital Commerce</span>
           </div>
         </div>
       ),
-      storyTitle: 'Consumers Credit Union Achieves 5x ROI on Fraud Operations',
-      storySummary: 'By orchestrating multi-vendor risk signals in a single API, Consumers Credit Union optimized data vendor calls, paying only for step-up verification when high-risk anomalies were flagged.',
+      storyTitle: 'GlobalBrands Achieves 5x Digital Marketing Lead Conversion',
+      storySummary: 'Using Team Monsrow performance SEO, targeted PPC campaigns, and AI lead scoring, GlobalBrands expanded market share across international markets rapidly.',
       keyResults: [
-        '5x ROI per dollar spent on risk data orchestration',
-        'Eliminated duplicate vendor subscription costs',
-        'Full operational visibility across deposit & loan products'
+        '5x Return on Ad Spend (ROAS)',
+        '300% increase in organic search acquisition',
+        'Full attribution across customer touchpoints'
       ]
     },
     {
       id: 'earnest',
       metric: '56%',
-      label: 'Increase in automated approval rate',
-      company: 'earnest',
-      bgColor: 'bg-[#FFA0AF]', // Soft Coral Pink (Image 3)
+      label: 'Cloud deployment speed increase',
+      company: 'CloudVentures',
+      bgColor: 'bg-[#FFA0AF]', // Soft Coral Pink
       logoComponent: (
         <span className="font-extrabold text-3xl tracking-tighter text-[#1C1D21] font-sans">
-          earnest
+          CloudVentures
         </span>
       ),
-      storyTitle: 'Earnest Boosts Digital Lending Approval Rates by 56%',
-      storySummary: 'Lending platform Earnest deployed Team Monsrow Actionable AI to continuously re-evaluate edge-case applicants, automatically approving verified low-risk borrowers without human friction.',
+      storyTitle: 'CloudVentures Accelerates Software Release Speed by 56%',
+      storySummary: 'Team Monsrow cloud architects engineered microservices infrastructure and automated CI/CD pipelines for CloudVentures, enabling daily friction-free product deployments.',
       keyResults: [
-        '56% increase in instant lending approvals',
-        'Sub-second underwriting decision engine',
-        'Enhanced borrower experience & conversion'
+        '56% faster software release cycle',
+        'Zero downtime cloud migration',
+        'Enhanced platform reliability & SLA compliance'
       ]
     }
   ];

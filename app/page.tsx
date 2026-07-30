@@ -15,12 +15,13 @@ import {
   WallOfTrust,
   ResourcesBlog,
 } from '@/components/sections';
-import { ScheduleDemoModal, InteractiveWorkflowModal, SearchModal } from '@/components/modals';
+import { ScheduleDemoModal, InteractiveWorkflowModal, SearchModal, ServiceHeroModal, ServiceDetail } from '@/components/modals';
 
 export default function Home() {
   const [demoOpen, setDemoOpen] = useState(false);
   const [workflowOpen, setWorkflowOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<ServiceDetail | null>(null);
 
   return (
     <div className="min-h-screen bg-[#F5F4F0] text-[#1C1D21] font-sans selection:bg-[#FF5A60] selection:text-white">
@@ -36,6 +37,7 @@ export default function Home() {
         onOpenDemo={() => setDemoOpen(true)}
         onOpenWorkflow={() => setWorkflowOpen(true)}
         onOpenSearch={() => setSearchOpen(true)}
+        onSelectService={(service) => setSelectedService(service)}
       />
 
       {/* Main Hero Section with Interactive Radar Canvas */}
@@ -102,6 +104,13 @@ export default function Home() {
       <SearchModal
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
+        onOpenDemo={() => setDemoOpen(true)}
+      />
+
+      <ServiceHeroModal
+        isOpen={selectedService !== null}
+        service={selectedService}
+        onClose={() => setSelectedService(null)}
         onOpenDemo={() => setDemoOpen(true)}
       />
     </div>

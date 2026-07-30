@@ -12,35 +12,36 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header matching Image 5 */}
+        {/* Header matching Image 5 */}
         <div className="mb-12 space-y-3 max-w-3xl">
           <div className="flex items-center gap-1.5 text-[#FF5A60] font-bold text-xs uppercase tracking-widest">
             <span className="text-[10px]">▲</span>
-            <span>ACTIONABLE AI</span>
+            <span>ACTIONABLE AI &amp; AUTOMATION</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-normal text-[#1C1D21] font-display tracking-tight leading-[1.08]">
-            Predict, detect, and triage with our suite of Actionable AI tools
+            Predict, automate, and optimize with our suite of Actionable AI tools
           </h2>
           <p className="text-sm sm:text-base text-[#4A4D57] leading-relaxed">
-            Your fraud team shouldn&apos;t be the last line of defense. Our native AI continuously handles fraud detection, scoring, and case review to reduce manual work for your team.
+            Your teams shouldn&apos;t spend hours on repetitive backlogs. Our native AI continuously handles system data orchestration, IoT hardware triage, and digital marketing optimizations.
           </p>
         </div>
 
         {/* 3 AI Tool Cards matching Image 5 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Card 1: Fraud Attack Radar */}
+          {/* Card 1: AI Systems Intelligence */}
           <div className="bg-[#EAE8E3] rounded-2xl p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
             <div>
               <div className="flex items-center gap-1.5 mb-4 text-[10px] font-bold font-mono uppercase tracking-wider text-gray-500">
                 <span className="w-1.5 h-1.5 bg-[#FF5A60] rounded-xs" />
-                <span>01 FRAUD INTELLIGENCE</span>
+                <span>01 SYSTEMS INTELLIGENCE</span>
               </div>
 
               {/* Shared PII Graphic */}
               <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6 space-y-3 shadow-xs">
                 <div className="flex items-center justify-between text-xs font-bold text-[#1C1D21]">
-                  <span>Shared PII</span>
-                  <span className="font-mono text-gray-500">60</span>
+                  <span>System Workload</span>
+                  <span className="font-mono text-gray-500">60%</span>
                 </div>
 
                 {/* Bar */}
@@ -53,30 +54,30 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
                 <div className="space-y-1.5 text-[11px] text-gray-600 font-normal pt-1">
                   <div className="flex justify-between items-center">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A60]" /> Shared SSN
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A60]" /> App Server Load
                     </span>
-                    <span className="font-mono text-gray-800">41</span>
+                    <span className="font-mono text-gray-800">41%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A60]" /> Shared Email Address
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A60]" /> IoT Sensor Signal
                     </span>
-                    <span className="font-mono text-gray-800">12</span>
+                    <span className="font-mono text-gray-800">12%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A60]" /> Shared Home Address
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A60]" /> Ad Campaign Traffic
                     </span>
-                    <span className="font-mono text-gray-800">7</span>
+                    <span className="font-mono text-gray-800">7%</span>
                   </div>
                 </div>
               </div>
 
               <h3 className="text-xl font-normal text-[#1C1D21] font-display mb-3">
-                Fraud Attack Radar
+                Systems Intelligence Radar
               </h3>
               <p className="text-xs sm:text-sm text-[#4A4D57] leading-relaxed mb-6 font-normal">
-                AI-powered intelligence alerts you to coordinated fraud attacks at the portfolio level, so you can stop large-scale attacks before they escalate and keep your onboarding funnel flowing.
+                AI-powered intelligence alerts you to software bottlenecks, cloud resource spikes, and IoT hardware anomalies, keeping your digital operations running at peak speed.
               </p>
             </div>
 
@@ -89,7 +90,7 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
             </button>
           </div>
 
-          {/* Card 2: Fraud Signal */}
+          {/* Card 2: Predictive ML Analytics */}
           <div className="bg-[#EAE8E3] rounded-2xl p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
             <div>
               <div className="flex items-center gap-1.5 mb-4 text-[10px] font-bold font-mono uppercase tracking-wider text-gray-500">
@@ -100,7 +101,7 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
               {/* Fraud Signal Line Graph Graphic */}
               <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6 space-y-2 shadow-xs min-h-[140px] flex flex-col justify-between">
                 <div className="flex items-center justify-between text-xs font-bold text-[#1C1D21]">
-                  <span>Fraud Signal</span>
+                  <span>Growth Velocity</span>
                   <div className="w-5 h-5 rounded border border-gray-300 flex items-center justify-center text-[9px]">⚡</div>
                 </div>
 
@@ -121,10 +122,10 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
               </div>
 
               <h3 className="text-xl font-normal text-[#1C1D21] font-display mb-3">
-                Fraud Signal
+                Predictive ML Analytics
               </h3>
               <p className="text-xs sm:text-sm text-[#4A4D57] leading-relaxed mb-6 font-normal">
-                Our identity-centric machine learning model continuously predicts fraud risk from first touch to every subsequent interaction, so you can confidently distinguish good customers from bad actors.
+                Our machine learning models continuously predict user churn, hardware maintenance cycles, and digital ad conversion potential, giving your business a strategic edge.
               </p>
             </div>
 
@@ -146,8 +147,8 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
               </div>
 
               {/* Document Review ID Card Graphic */}
-              <div className="bg-[#FDF2F4] rounded-xl p-3 border border-pink-200 mb-6 space-y-3 shadow-xs">
-                <div className="text-[9px] font-bold uppercase tracking-wider text-[#FF5A60]">IDENTIFICATION</div>
+              <div className="bg-[#d53f57] rounded-xl p-3 border border-pink-200 mb-6 space-y-3 shadow-xs">
+                <div className="text-[9px] font-bold uppercase tracking-wider text-white">TASK AUTOMATION</div>
                 <div className="bg-white rounded-lg p-2.5 border border-pink-100 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-500">
                     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -161,19 +162,19 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
                   </div>
                 </div>
 
-                <div className="bg-[#E9D5FF]/60 text-purple-900 px-3 py-1.5 rounded-md text-[10px] font-medium flex items-center justify-between">
+                <div className="bg-[#a15bec] text-white px-3 py-1.5 rounded-md text-[10px] font-medium flex items-center justify-between">
                   <span className="flex items-center gap-1">
-                    <span className="text-[10px]">✨</span> AI Document Review:
+                    <span className="text-[10px]"></span> AI Code &amp; Campaign Review:
                   </span>
-                  <span className="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded text-[9px] font-bold">Approved</span>
+                  <span className="bg-emerald-800 text-white px-1.5 py-0.5 rounded text-[9px] font-bold">Approved</span>
                 </div>
               </div>
 
               <h3 className="text-xl font-normal text-[#1C1D21] font-display mb-3">
-                AI Assistant
+                AI Workflow Assistant
               </h3>
               <p className="text-xs sm:text-sm text-[#4A4D57] leading-relaxed mb-6 font-normal">
-                Agentic AI analyzes case triggers and recommends next steps for infinitely scalable risk management and compliance operations.
+                Agentic AI analyzes workflow triggers and automates next steps across custom software, IoT device monitoring, and marketing lead management.
               </p>
             </div>
 

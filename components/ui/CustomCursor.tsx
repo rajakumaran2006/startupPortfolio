@@ -82,36 +82,15 @@ export default function CustomCursor() {
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
       {/* Precision Main Center Dot */}
       <div
-        className={`fixed top-0 left-0 w-2 h-2 rounded-full transition-all duration-150 ease-out ${
-          isHovered ? 'opacity-0 scale-0' : 'bg-[#1C1D21] opacity-100 scale-100'
+        className={`fixed top-0 left-0 w-2.5 h-2.5 rounded-full transition-all duration-150 ease-out ${
+          isHovered ? 'bg-[#FF5A60] scale-125' : 'bg-[#1C1D21] opacity-100 scale-100'
         }`}
         style={{
-          transform: `translate3d(${position.x - 4}px, ${position.y - 4}px, 0) scale(${
+          transform: `translate3d(${position.x - 5}px, ${position.y - 5}px, 0) scale(${
             isClicked ? 0.6 : 1
           })`,
         }}
       />
-
-      {/* Techy Outer Crosshair Ring */}
-      <div
-        className={`fixed top-0 left-0 rounded-full border transition-all duration-200 ease-out flex items-center justify-center ${
-          isHovered
-            ? 'opacity-0 scale-50'
-            : 'w-8 h-8 border-[#1C1D21]/30 bg-transparent opacity-100'
-        }`}
-        style={{
-          transform: `translate3d(${trailingPos.x - 16}px, ${
-            trailingPos.y - 16
-          }px, 0) scale(${isClicked ? 0.85 : 1})`,
-        }}
-      >
-        {/* Custom Text inside Cursor Ring if provided */}
-        {hoverText && (
-          <span className="text-[8px] font-bold tracking-tighter uppercase text-[#FF5A60] animate-fade-in">
-            {hoverText}
-          </span>
-        )}
-      </div>
     </div>
   );
 }

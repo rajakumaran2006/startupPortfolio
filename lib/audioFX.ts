@@ -56,7 +56,7 @@ class SoundFX {
     }
   }
 
-  // Soft click / selection sound
+  // Soft click / default selection sound
   public playClick() {
     if (this.isMuted) return;
     const ctx = this.getContext();
@@ -80,6 +80,43 @@ class SoundFX {
       osc.stop(ctx.currentTime + 0.05);
     } catch {
       // ignore audio restrictions
+    }
+  }
+
+  // High-impact CTA sound for primary buttons (Schedule Demo, Submit, Get Started)
+  public playCTA() {
+    if (this.isMuted) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+
+    try {
+      const now = ctx.currentTime;
+      const osc1 = ctx.createOscillator();
+      const osc2 = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc1.type = 'sine';
+      osc2.type = 'triangle';
+
+      osc1.frequency.setValueAtTime(440, now);
+      osc1.frequency.exponentialRampToValueAtTime(880, now + 0.1);
+
+      osc2.frequency.setValueAtTime(660, now);
+      osc2.frequency.exponentialRampToValueAtTime(1320, now + 0.1);
+
+      gain.gain.setValueAtTime(0.06, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+      osc1.connect(gain);
+      osc2.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc1.start(now);
+      osc2.start(now);
+      osc1.stop(now + 0.12);
+      osc2.stop(now + 0.12);
+    } catch {
+      // ignore
     }
   }
 
@@ -119,6 +156,87 @@ class SoundFX {
     }
   }
 
+  // Crisp tab & filter button sound
+  public playTab() {
+    if (this.isMuted) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+
+    try {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(750, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.04);
+
+      gain.gain.setValueAtTime(0.035, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.04);
+    } catch {
+      // ignore
+    }
+  }
+
+  // Card click navigation sound
+  public playCardClick() {
+    if (this.isMuted) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+
+    try {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(350, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(550, ctx.currentTime + 0.07);
+
+      gain.gain.setValueAtTime(0.04, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.07);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.07);
+    } catch {
+      // ignore
+    }
+  }
+
+  // Modal close sound
+  public playModalClose() {
+    if (this.isMuted) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+
+    try {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(450, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 0.06);
+
+      gain.gain.setValueAtTime(0.03, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.06);
+    } catch {
+      // ignore
+    }
+  }
+
   // Success / AI analysis complete chime
   public playSuccess() {
     if (this.isMuted) return;
@@ -149,6 +267,7 @@ class SoundFX {
       // ignore
     }
   }
+
   // Landing / Pop impact sound when cards or sections land in position
   public playLand() {
     if (this.isMuted) return;

@@ -85,63 +85,54 @@ export default function Footer({ onOpenDemo }: FooterProps) {
           <div className="space-y-3">
             <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">PLATFORM</h4>
             <ul className="space-y-2 text-gray-400 font-normal">
-              <li><a href="#platform" className="hover:text-white transition-colors">Actionable AI suite</a></li>
-              <li><a href="#risk-management" className="hover:text-white transition-colors">Continuous fraud management</a></li>
-              <li><a href="#risk-management" className="hover:text-white transition-colors">Customer onboarding</a></li>
-              <li><a href="#data-partners" className="hover:text-white transition-colors">Data partner ecosystem</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Identity verification</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Orchestration &amp; decisioning engine</a></li>
+              <li><a href="#platform" className="hover:text-white transition-colors">Software Development</a></li>
+              <li><a href="#platform" className="hover:text-white transition-colors">Business Solutions</a></li>
+              <li><a href="#platform" className="hover:text-white transition-colors">Artificial Intelligence</a></li>
+              <li><a href="#platform" className="hover:text-white transition-colors">Factory &amp; IoT</a></li>
+              <li><a href="#platform" className="hover:text-white transition-colors">Cloud &amp; Infrastructure</a></li>
+              <li><a href="#platform" className="hover:text-white transition-colors">Digital Marketing</a></li>
             </ul>
           </div>
 
-          {/* Column 2: USE CASES */}
+          {/* Column 2: SOLUTIONS */}
           <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">USE CASES</h4>
+            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">SOLUTIONS</h4>
             <ul className="space-y-2 text-gray-400 font-normal">
-              <li><a href="#risk-management" className="hover:text-white transition-colors">Onboarding</a></li>
-              <li><a href="#risk-management" className="hover:text-white transition-colors">Authentication &amp; account servicing</a></li>
-              <li><a href="#risk-management" className="hover:text-white transition-colors">Transaction monitoring</a></li>
-              <li><a href="#risk-management" className="hover:text-white transition-colors">Credit</a></li>
-              <li><a href="#risk-management" className="hover:text-white transition-colors">End-to-end compliance</a></li>
-              <li><a href="#risk-management" className="hover:text-white transition-colors">Full-lifecycle fraud prevention</a></li>
+              <li><a href="/service" className="hover:text-white transition-colors">Risk &amp; Operations</a></li>
+              <li><a href="/service" className="hover:text-white transition-colors">Software Engineering</a></li>
+              <li><a href="/service" className="hover:text-white transition-colors">AI &amp; Automation</a></li>
+              <li><a href="/service" className="hover:text-white transition-colors">Cloud Infrastructure</a></li>
+              <li><a href="/service" className="hover:text-white transition-colors">Security &amp; Auditing</a></li>
             </ul>
           </div>
 
-          {/* Column 3: WHO WE WORK WITH */}
+          {/* Column 3: ENGAGEMENT */}
           <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">WHO WE WORK WITH</h4>
+            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">ENGAGEMENT</h4>
             <ul className="space-y-2 text-gray-400 font-normal">
-              <li><a href="#who-we-serve" className="hover:text-white transition-colors">Banks</a></li>
-              <li><a href="#who-we-serve" className="hover:text-white transition-colors">Credit unions</a></li>
-              <li><a href="#who-we-serve" className="hover:text-white transition-colors">Fintechs</a></li>
-              <li><a href="#who-we-serve" className="hover:text-white transition-colors">Sponsor banks</a></li>
-              <li><a href="#who-we-serve" className="hover:text-white transition-colors">Crypto</a></li>
-              <li><a href="#data-partners" className="hover:text-white transition-colors">Data &amp; channel partners</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Get in Touch</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Schedule Consultation</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Request Demo</a></li>
             </ul>
           </div>
 
-          {/* Column 4: RESOURCES */}
+          {/* Column 4: COMPANY */}
+          <div className="space-y-3">
+            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">COMPANY</h4>
+            <ul className="space-y-2 text-gray-400 font-normal">
+              <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/careers" className="hover:text-white transition-colors">Careers &amp; Culture</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+          </div>
+
+          {/* Column 5: RESOURCES */}
           <div className="space-y-3">
             <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">RESOURCES</h4>
             <ul className="space-y-2 text-gray-400 font-normal">
-              <li><a href="#resources" className="hover:text-white transition-colors">Content library</a></li>
-              <li><a href="#results" className="hover:text-white transition-colors">Client stories</a></li>
-              <li><a href="#resources" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#resources" className="hover:text-white transition-colors">Events</a></li>
-              <li><a href="#resources" className="hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#resources" className="hover:text-white transition-colors">Developer hub</a></li>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenDemo(); }} className="hover:text-white transition-colors">Get in touch</a></li>
-            </ul>
-          </div>
-
-          {/* Column 5: ABOUT US */}
-          <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">ABOUT US</h4>
-            <ul className="space-y-2 text-gray-400 font-normal">
-              <li><a href="#" className="hover:text-white transition-colors">About us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
+              <li><a href="/service" className="hover:text-white transition-colors">Documentation</a></li>
+              <li><a href="/about" className="hover:text-white transition-colors">Leadership</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Support Center</a></li>
             </ul>
           </div>
 
@@ -288,34 +279,21 @@ export default function Footer({ onOpenDemo }: FooterProps) {
                   planeBaseHeight={8}
                 />
               </div>
-
-              {/* SCHEDULE A DEMO Button Pill (Image 1 Bottom Center) */}
-              <div className="mt-4 sm:mt-8">
-                <button
-                  onClick={onOpenDemo}
-                  className="bg-transparent border-2 border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-xs sm:text-sm font-bold uppercase tracking-wider px-8 sm:px-10 py-3.5 sm:py-4 rounded-full inline-flex items-center gap-2 transition-all shadow-sm transform hover:scale-105 active:scale-95 group"
-                >
-                  <span>SCHEDULE A DEMO</span>
-                  <span className="text-[#1C1D21] group-hover:text-white transition-colors text-xs font-bold">▶</span>
-                </button>
-              </div>
             </div>
           )}
 
         </div>
 
-        {/* Bottom Small Demo CTA in Typewriter mode (Image 2) */}
-        {activeStage === 'typewriter' && (
-          <div className="mt-auto pt-6 animate-fade-in">
-            <button
-              onClick={onOpenDemo}
-              className="bg-transparent border border-[#1C1D21] text-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[11px] font-bold uppercase tracking-widest px-6 py-2.5 rounded-full inline-flex items-center gap-2 transition-all"
-            >
-              <span>SCHEDULE A DEMO</span>
-              <span className="text-xs font-bold">▶</span>
-            </button>
-          </div>
-        )}
+        {/* Single Unified Schedule a Demo CTA */}
+        <div className="mt-auto pt-6 sm:pt-8 animate-fade-in">
+          <button
+            onClick={onOpenDemo}
+            className="bg-transparent border-[2.5px] border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-base sm:text-lg md:text-xl font-extrabold uppercase tracking-widest px-10 sm:px-14 py-4 sm:py-5 rounded-full inline-flex items-center gap-3 transition-all shadow-md transform hover:scale-105 active:scale-95 group cursor-pointer"
+          >
+            <span>SCHEDULE A DEMO</span>
+            <span className="text-[#1C1D21] group-hover:text-white transition-colors text-sm sm:text-base font-extrabold">▶</span>
+          </button>
+        </div>
       </div>
 
     </footer>

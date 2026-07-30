@@ -126,10 +126,10 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
         <div className="mb-10 space-y-3">
           <div className="flex items-center gap-2 text-[#FF5A60] font-bold text-xs uppercase tracking-[0.2em]">
             <span className="text-[9px]">▲</span>
-            <span className="text-gray-600 font-bold">UNIFIED RISK MANAGEMENT</span>
+            <span className="text-gray-600 font-bold">UNIFIED TECHNOLOGY SOLUTIONS</span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1D21] font-sans tracking-tight leading-[1.1] max-w-4xl">
-            Accelerate onboarding, stop fraud, and simplify compliance
+            Accelerate software delivery, optimize IoT hardware, and scale digital growth
           </h2>
         </div>
 
@@ -182,7 +182,7 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
           {/* Category Pill Buttons (Matching Images 1, 2, 3) */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             
-            {/* Pill 1: Onboarding at scale */}
+            {/* Pill 1: Software & App Engineering */}
             <button
               onClick={() => handleTabClick('onboarding')}
               className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer border ${
@@ -190,35 +190,35 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                   ? 'border-[#1C1D21] text-[#1C1D21]  font-semibold shadow-xs scale-105'
                   : 'border-gray-300/80 text-gray-500 hover:text-[#1C1D21] hover:border-gray-400 bg-transparent'
               }`}
-              data-cursor="ONBOARDING"
+              data-cursor="SOFTWARE"
             >
-              Onboarding at scale
+              Software &amp; App Engineering
             </button>
 
-            {/* Pill 2: Full-lifecycle fraud prevention */}
+            {/* Pill 2: Factory & IoT Hardware */}
             <button
               onClick={() => handleTabClick('fraud')}
               className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer border ${
                 activeTab === 'fraud'
-                  ? 'border-[#1C1D21] text-[#1C1D21] bg-white font-semibold shadow-xs scale-105'
-                  : 'border-gray-300/80 text-gray-500 hover:text-[#1C1D21] hover:border-gray-400 bg-transparent'
+                  ? 'border-[#1C1D21] text-[#1C1D21] font-semibold shadow-xs scale-105'
+                  : 'border-gray-300/80 text-gray-500 hover:text-[#1C1D21] hover:border-gray-400 '
               }`}
-              data-cursor="FRAUD SIGNAL"
+              data-cursor="HARDWARE IOT"
             >
-              Full-lifecycle fraud prevention
+              Factory &amp; IoT Hardware
             </button>
 
-            {/* Pill 3: End-to-end compliance */}
+            {/* Pill 3: AI & Digital Marketing */}
             <button
               onClick={() => handleTabClick('compliance')}
               className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer border ${
                 activeTab === 'compliance'
-                  ? 'border-[#1C1D21] text-[#1C1D21] bg-white font-semibold shadow-xs scale-105'
-                  : 'border-gray-300/80 text-gray-500 hover:text-[#1C1D21] hover:border-gray-400 bg-transparent'
+                  ? 'border-[#1C1D21] text-[#1C1D21] font-semibold shadow-xs scale-105'
+                  : 'border-gray-300/80 text-gray-500 hover:text-[#1C1D21] hover:border-gray-400'
               }`}
-              data-cursor="COMPLIANCE"
+              data-cursor="DIGITAL MARKETING"
             >
-              End-to-end compliance
+              AI &amp; Digital Marketing
             </button>
 
           </div>

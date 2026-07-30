@@ -35,7 +35,7 @@ export default function AudienceSegmentSection({ onOpenDemo, onOpenWorkflow }: A
                 : 'bg-[#D8D5CD] text-[#555] hover:bg-[#CCC9C1]'
             }`}
           >
-            FOR BANKS
+            FOR STARTUPS
           </button>
           <button
             onClick={() => switchSegment('fintechs')}
@@ -45,7 +45,7 @@ export default function AudienceSegmentSection({ onOpenDemo, onOpenWorkflow }: A
                 : 'bg-[#D8D5CD] text-[#555] hover:bg-[#CCC9C1]'
             }`}
           >
-            FOR FINTECHS
+            FOR ENTERPRISES
           </button>
           <button
             onClick={() => switchSegment('unions')}
@@ -55,7 +55,7 @@ export default function AudienceSegmentSection({ onOpenDemo, onOpenWorkflow }: A
                 : 'bg-[#D8D5CD] text-[#555] hover:bg-[#CCC9C1]'
             }`}
           >
-            FOR CREDIT UNIONS
+            FOR INDUSTRIALS
           </button>
         </div>
 
@@ -65,9 +65,9 @@ export default function AudienceSegmentSection({ onOpenDemo, onOpenWorkflow }: A
           {/* Internal Top Bar */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 mb-8 border-b border-gray-100">
             <h3 className="text-2xl sm:text-3xl font-normal text-[#1C1D21] font-display tracking-tight max-w-xl leading-tight">
-              {activeSegment === 'banks' && 'Centralize risk management with consistent, enterprise-grade controls'}
-              {activeSegment === 'fintechs' && 'Automate 95%+ of onboarding decisions without slowing down growth'}
-              {activeSegment === 'unions' && 'Protect member trust with seamless, frictionless verification'}
+              {activeSegment === 'banks' && 'Accelerate custom software development and launch digital marketing fast'}
+              {activeSegment === 'fintechs' && 'Scale enterprise ERP, CRM, and cloud infrastructure with total reliability'}
+              {activeSegment === 'unions' && 'Connect factories and industrial plants with smart IoT hardware systems'}
             </h3>
 
             <button
@@ -75,9 +75,9 @@ export default function AudienceSegmentSection({ onOpenDemo, onOpenWorkflow }: A
               className="px-6 py-3 rounded-full border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-colors shrink-0 cursor-pointer"
             >
               <span>
-                {activeSegment === 'banks' && 'SEE HOW BANKS USE MONSROW'}
-                {activeSegment === 'fintechs' && 'SEE HOW FINTECHS USE MONSROW'}
-                {activeSegment === 'unions' && 'SEE HOW CREDIT UNIONS USE MONSROW'}
+                {activeSegment === 'banks' && 'SEE STARTUP SOLUTIONS'}
+                {activeSegment === 'fintechs' && 'SEE ENTERPRISE SOLUTIONS'}
+                {activeSegment === 'unions' && 'SEE INDUSTRIAL SOLUTIONS'}
               </span>
               <span className="text-[#FF5A60]">▶</span>
             </button>

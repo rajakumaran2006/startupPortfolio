@@ -11,9 +11,9 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
   const platformCards = [
     {
       number: '01',
-      title: 'Open data ecosystem',
-      description: "Access 270+ partner solutions. Team Monsrow's vendor-neutral approach lets you integrate best-in-class providers, compare performance, and swap solutions as needed.",
-      cta: 'EXPLORE DATA PARTNERS',
+      title: 'Software & App Engineering',
+      description: "Custom web applications, mobile apps, enterprise SaaS, ERP, CRM, and HRMS platforms built with cutting-edge software architecture.",
+      cta: 'EXPLORE SOFTWARE SOLUTIONS',
       icon: (
         <svg className="w-14 h-14 text-[#1C1D21]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
           {/* Orbital Atom Geometry */}
@@ -29,9 +29,9 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
     },
     {
       number: '02',
-      title: 'Orchestration engine',
-      description: "Team Monsrow's orchestration layer sits between the data ecosystem and intelligence layer, routing inputs, sequencing vendor calls, and managing dependencies across every workflow.",
-      cta: 'EXPLORE DATA ORCHESTRATION',
+      title: 'Factory & Hardware IoT',
+      description: "Connect physical plants, industrial machinery, and smart hardware sensors with real-time IoT monitoring and embedded automation engines.",
+      cta: 'EXPLORE HARDWARE & IOT',
       icon: (
         <svg className="w-14 h-14 text-[#1C1D21]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
           {/* Orchestration Network Cluster */}
@@ -52,9 +52,9 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
     },
     {
       number: '03',
-      title: 'Actionable AI',
-      description: "Team Monsrow's Actionable AI suite combines predictive machine learning and agentic AI to help your team spend time on what matters most. Every step is logged, explainable, and tied to your policies.",
-      cta: 'EXPLORE ACTIONABLE AI',
+      title: 'AI & Digital Growth',
+      description: "Actionable AI, automated predictive machine learning models, cloud infrastructure, and data-driven performance digital marketing.",
+      cta: 'EXPLORE AI & DIGITAL MARKETING',
       icon: (
         <svg className="w-14 h-14 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
           {/* AI Profile Head & Circuits */}
@@ -68,7 +68,7 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
       bgColor: 'bg-[#A31661]',
       textColor: 'text-white',
       btnBg: 'bg-transparent border border-white text-white hover:bg-white hover:text-[#A31661]',
-    }
+    },
   ];
 
   return (
@@ -79,7 +79,7 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
         <div className="mb-12 space-y-3 max-w-3xl">
           <div className="flex items-center gap-1.5 text-[#FF5A60] font-bold text-xs uppercase tracking-widest">
             <span className="text-[10px]">▲</span>
-            <span>PLATFORM</span>
+            <span>SERVICES &amp; PLATFORM</span>
           </div>
           <ScrollReveal
             baseOpacity={0.35}
@@ -91,10 +91,10 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
             wordAnimationEnd="top 50%"
             textClassName="text-3xl sm:text-5xl font-normal text-[#1C1D21] font-display tracking-tight leading-[1.08]"
           >
-            End-to-end risk management starts here
+            End-to-end technology solutions start here
           </ScrollReveal>
           <p className="text-sm sm:text-base text-[#4A4D57] leading-relaxed">
-            Team Monsrow&apos;s open data ecosystem, orchestration engine, and Actionable AI form a unified platform that gets smarter with every signal and every decision.
+            Team Monsrow&apos;s software development, hardware IoT engineering, cloud architecture, Actionable AI, and digital marketing form a unified growth ecosystem.
           </p>
         </div>
 

@@ -29,13 +29,13 @@ export default function DataPartners({ onOpenWorkflow }: DataPartnersProps) {
           <div className="space-y-4 max-w-3xl">
             <div className="flex items-center gap-2 text-[#FF5A60] font-bold text-xs uppercase tracking-widest">
               <span className="w-2.5 h-2.5 bg-[#FF5A60] rounded-xs" />
-              <span>DATA PARTNERS</span>
+              <span>TECHNOLOGY PARTNERS &amp; INTEGRATIONS</span>
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-normal text-[#1C1D21] font-display tracking-tight leading-[1.08]">
-              Access the industry’s broadest ecosystem of identity data
+              Access an expansive ecosystem of enterprise software &amp; cloud integrations
             </h2>
             <p className="text-sm sm:text-base text-[#4A4D57] leading-relaxed max-w-2xl">
-              Team Monsrow&apos;s vendor-neutral network gives you access to 270+ partner solutions. Swap, test, and optimize as your risk needs evolve.
+              Team Monsrow&apos;s network connects seamlessly with 270+ cloud platforms, IoT hardware systems, AI model engines, and marketing analytics tools.
             </p>
           </div>
 

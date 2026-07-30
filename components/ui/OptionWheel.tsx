@@ -99,6 +99,48 @@ export default function OptionWheel({
 
   const runFrameRef = useRef<(now: number) => void>(null);
 
+  const updateLayout = useCallback((currentPos: number) => {
+    const cfg = cfgRef.current;
+    const els = itemRefs.current;
+    if (!els || !cfg.count) return;
+
+    const n = cfg.count;
+    const mirror = cfg.side === 'right' ? -1 : 1;
+    const tiltRad = ((cfg.tilt || 0) * Math.PI) / 180;
+    const rowH = cfg.rowH || 44;
+    const R = tiltRad > 0.0005 ? rowH / tiltRad : 0;
+
+    for (let i = 0; i < n; i++) {
+      const el = els[i];
+      if (!el) continue;
+      let d = i - currentPos;
+      if (cfg.loop && n > 1) {
+        d = ((d % n) + n) % n;
+        if (d > n / 2) d -= n;
+      }
+      const dist = Math.abs(d);
+      let x = 0;
+      let y = d * rowH;
+      let rot = 0;
+      if (R > 0) {
+        const ang = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, d * tiltRad));
+        y = R * Math.sin(ang);
+        x = -mirror * R * (1 - Math.cos(ang)) * (cfg.curve || 0);
+        rot = (mirror * ang * 180) / Math.PI;
+      }
+
+      const transformStr = rot !== 0
+        ? `translate3d(${x.toFixed(2)}px, calc(${y.toFixed(2)}px - 50%), 0) rotate(${rot.toFixed(3)}deg)`
+        : `translate3d(${x.toFixed(2)}px, calc(${y.toFixed(2)}px - 50%), 0)`;
+
+      el.style.transform = transformStr;
+      el.style.opacity = String(Math.max(cfg.minOpacity ?? 0.1, 1 - dist * (cfg.fade ?? 0.4)));
+      el.style.filter = (cfg.blur ?? 1) > 0 && dist > 0.1 ? `blur(${(dist * cfg.blur).toFixed(2)}px)` : 'none';
+      el.style.setProperty('--ow-p', Math.max(0, 1 - Math.min(dist, 1)).toFixed(4));
+      el.style.zIndex = dist < 0.5 ? '20' : '1';
+    }
+  }, []);
+
   const runFrame = useCallback((now: number) => {
     const dt = Math.min((now - lastRef.current) / 1000, 0.05);
     lastRef.current = now;
@@ -113,43 +155,14 @@ export default function OptionWheel({
     if (settled) next = target;
     posRef.current = next;
 
-    const els = itemRefs.current;
-    const n = cfg.count;
-    const mirror = cfg.side === 'right' ? -1 : 1;
-    const tiltRad = (cfg.tilt * Math.PI) / 180;
-    const R = tiltRad > 0.0005 ? cfg.rowH / tiltRad : 0;
-    for (let i = 0; i < n; i++) {
-      const el = els[i];
-      if (!el) continue;
-      let d = i - next;
-      if (cfg.loop && n > 1) {
-        d = ((d % n) + n) % n;
-        if (d > n / 2) d -= n;
-      }
-      const dist = Math.abs(d);
-      let x = 0;
-      let y = d * cfg.rowH;
-      let rot = 0;
-      if (R > 0) {
-        const ang = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, d * tiltRad));
-        y = R * Math.sin(ang);
-        x = -mirror * R * (1 - Math.cos(ang)) * cfg.curve;
-        rot = (mirror * ang * 180) / Math.PI;
-      }
-      el.style.transform = rot !== 0
-        ? `translate(${x.toFixed(2)}px, calc(${y.toFixed(2)}px - 50%)) rotate(${rot.toFixed(3)}deg)`
-        : `translate(${x.toFixed(2)}px, calc(${y.toFixed(2)}px - 50%))`;
-      el.style.opacity = String(Math.max(cfg.minOpacity, 1 - dist * cfg.fade));
-      el.style.filter = cfg.blur > 0 ? `blur(${(dist * cfg.blur).toFixed(2)}px)` : 'none';
-      el.style.setProperty('--ow-p', Math.max(0, 1 - Math.min(dist, 1)).toFixed(4));
-    }
+    updateLayout(next);
 
     if (!settled) {
       rafRef.current = requestAnimationFrame((ts) => runFrameRef.current?.(ts));
     } else {
       rafRef.current = null;
     }
-  }, []);
+  }, [updateLayout]);
 
   useEffect(() => {
     runFrameRef.current = runFrame;
@@ -294,7 +307,16 @@ export default function OptionWheel({
 
   useEffect(() => {
     applyTarget(targetRef.current, false);
-  }, [items, fontSize, spacing, curve, tilt, blur, fade, minOpacity, side, loop, smoothing, applyTarget]);
+    updateLayout(posRef.current);
+  }, [items, fontSize, spacing, curve, tilt, blur, fade, minOpacity, side, loop, smoothing, applyTarget, updateLayout]);
+
+  useEffect(() => {
+    // Run layout positioning on next tick after DOM mount to prevent initial unstyled text overlap
+    const timer = setTimeout(() => {
+      updateLayout(posRef.current);
+    }, 20);
+    return () => clearTimeout(timer);
+  }, [items, updateLayout]);
 
   useEffect(
     () => () => {
@@ -328,6 +350,7 @@ export default function OptionWheel({
           key={`${label}-${index}`}
           ref={(el) => {
             itemRefs.current[index] = el;
+            if (el) updateLayout(posRef.current);
           }}
           role="option"
           aria-selected={selectedIndex === index}

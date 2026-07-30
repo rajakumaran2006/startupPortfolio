@@ -138,7 +138,7 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
             {/* Title Eyebrow / Description with TrueFocus animation */}
             <div className="text-center font-display w-full flex justify-center">
               <TrueFocus
-                sentence="FULL-LIFECYCLE IDENTITY & FRAUD INTELLIGENCE"
+                sentence="SOFTWARE HARDWARE & DIGITAL MARKETING SOLUTIONS"
                 borderColor="#FF5A60"
                 glowColor="rgba(255, 90, 96, 0.6)"
                 blurAmount={1.5}
@@ -148,7 +148,7 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
             </div>
 
             <p className="text-lg sm:text-xl text-[#626570] font-normal leading-relaxed max-w-2xl text-center">
-              Team Monsrow is the AI-powered identity and fraud prevention platform that accelerates onboarding, stops fraud, and simplifies compliance across the customer lifecycle.
+              Team Monsrow is an end-to-end technology solutions company empowering businesses with custom software development, IoT hardware systems, AI automation, cloud architecture, and data-driven digital marketing.
             </p>
 
             {/* CTAs */}

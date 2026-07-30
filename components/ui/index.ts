@@ -1,3 +1,4 @@
+export { default as GlobalAudioListener } from './GlobalAudioListener';
 export { default as ASCIIText } from './ASCIIText';
 export { default as CustomCursor } from './CustomCursor';
 export { default as GeometricBackground } from './GeometricBackground';

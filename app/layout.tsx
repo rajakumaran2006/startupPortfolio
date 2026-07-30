@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: 'Team Monsrow is the AI-powered identity and fraud decision platform that accelerates onboarding, stops fraud, and simplifies compliance across the customer lifecycle.',
 };
 
+import { GlobalAudioListener } from '@/components/ui';
+
 export default function RootLayout({
   children,
 }: {
@@ -27,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} ${spaceGrotesk.variable}`}>
       <body suppressHydrationWarning className="font-sans bg-[#F5F4F0] text-[#1C1D21] antialiased selection:bg-[#FF5A60] selection:text-white">
+        <GlobalAudioListener />
         {children}
       </body>
     </html>

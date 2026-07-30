@@ -96,21 +96,11 @@ export default function LiveAiRiskSandbox() {
         {/* Input Parameters Box */}
         <div className="bg-[#27282D] rounded-2xl p-6 sm:p-8 border border-gray-700 shadow-2xl mb-10 space-y-6">
           
-          {/* OptionWheel Interactive Selector */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center bg-[#121316] p-4 sm:p-6 rounded-xl border border-gray-700/80">
-            <div className="md:col-span-5 space-y-1">
-              <span className="text-[10px] font-mono font-bold text-[#FF5A60] uppercase tracking-widest">
-                ▲ INTERACTIVE WHEEL SELECTOR
-              </span>
-              <h3 className="text-lg font-bold text-white font-display">
-                Spin &amp; Select Risk Profile
-              </h3>
-              <p className="text-xs text-gray-400">
-                Drag or scroll the wheel to load pre-configured enterprise fraud &amp; compliance pipelines with tactile feedback.
-              </p>
-            </div>
+          {/* OptionWheel Interactive Selector & Parameter Inputs */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch bg-[#121316] p-4 sm:p-6 rounded-xl border border-gray-700/80">
 
-            <div className="md:col-span-7 h-[160px] relative overflow-hidden bg-[#1C1D21] rounded-lg border border-gray-800">
+            {/* OptionWheel Wheel Selector (5 cols) */}
+            <div className="lg:col-span-5 h-[240px] sm:h-[260px] relative overflow-hidden bg-[#1C1D21] rounded-xl border border-gray-800 flex items-center">
               <OptionWheel
                 items={[
                   'Fintech Neobank',
@@ -123,13 +113,13 @@ export default function LiveAiRiskSandbox() {
                 defaultSelected={0}
                 textColor="#828590"
                 activeColor="#FF5A60"
-                fontSize={1.05}
-                spacing={2.2}
+                fontSize={0.95}
+                spacing={2.6}
                 curve={0}
                 tilt={0}
-                blur={1.0}
+                blur={0.6}
                 fade={0.4}
-                inset={20}
+                inset={24}
                 onChange={(idx, label) => {
                   setBusinessType(label);
                   if (label === 'Digital Mortgage Lender') {
@@ -156,63 +146,65 @@ export default function LiveAiRiskSandbox() {
                 }}
               />
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
-                Business Type
-              </label>
-              <input
-                type="text"
-                value={businessType}
-                onChange={(e) => setBusinessType(e.target.value)}
-                className="w-full bg-[#121316] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60]"
-              />
+            {/* Parameter Inputs Grid (7 cols) */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                  Business Type
+                </label>
+                <input
+                  type="text"
+                  value={businessType}
+                  onChange={(e) => setBusinessType(e.target.value)}
+                  className="w-full bg-[#1C1D21] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                  Target Region
+                </label>
+                <input
+                  type="text"
+                  value={targetRegion}
+                  onChange={(e) => setTargetRegion(e.target.value)}
+                  className="w-full bg-[#1C1D21] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                  Application Volume
+                </label>
+                <input
+                  type="text"
+                  value={volume}
+                  onChange={(e) => setVolume(e.target.value)}
+                  className="w-full bg-[#1C1D21] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60] transition-colors"
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                  Primary Risk Objective
+                </label>
+                <input
+                  type="text"
+                  value={scenario}
+                  onChange={(e) => setScenario(e.target.value)}
+                  className="w-full bg-[#1C1D21] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60] transition-colors"
+                />
+              </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
-                Primary Risk Objective
-              </label>
-              <input
-                type="text"
-                value={scenario}
-                onChange={(e) => setScenario(e.target.value)}
-                className="w-full bg-[#121316] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
-                Application Volume
-              </label>
-              <input
-                type="text"
-                value={volume}
-                onChange={(e) => setVolume(e.target.value)}
-                className="w-full bg-[#121316] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
-                Target Region
-              </label>
-              <input
-                type="text"
-                value={targetRegion}
-                onChange={(e) => setTargetRegion(e.target.value)}
-                className="w-full bg-[#121316] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF5A60]"
-              />
-            </div>
           </div>
 
           <div className="pt-2 flex justify-end">
             <button
               onClick={handleGenerateArchitecture}
               disabled={loading}
-              className="bg-[#FF5A60] hover:bg-[#E0484E] text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full flex items-center gap-2 transition-all shadow-lg disabled:opacity-50"
+              className="bg-[#FF5A60] hover:bg-[#E0484E] text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full flex items-center gap-2 transition-all shadow-lg hover:shadow-[#FF5A60]/20 cursor-pointer disabled:opacity-50"
             >
               {loading ? (
                 <>
@@ -221,8 +213,7 @@ export default function LiveAiRiskSandbox() {
                 </>
               ) : (
                 <>
-                  <Sparkles className="w-4 h-4" />
-                  <span>GENERATE AI RISK WORKFLOW</span>
+                  <span>RISK WORKFLOW</span>
                   <span>▶</span>
                 </>
               )}
@@ -230,6 +221,7 @@ export default function LiveAiRiskSandbox() {
           </div>
 
         </div>
+            
 
         {/* Error Output */}
         {error && (

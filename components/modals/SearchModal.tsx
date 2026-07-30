@@ -15,11 +15,12 @@ export default function SearchModal({ isOpen, onClose, onOpenDemo }: SearchModal
   if (!isOpen) return null;
 
   const quickLinks = [
-    { title: 'Actionable AI Suite', category: 'Platform', href: '#platform' },
-    { title: 'Fraud Attack Radar', category: 'Tool', href: '#actionable-ai' },
-    { title: '270+ Data Partners Network', category: 'Integrations', href: '#data-partners' },
-    { title: 'Case Study: LiveOak Bank', category: 'Customer Story', href: '#results' },
-    { title: '2026 State of Fraud Benchmark Report', category: 'Resource', href: '#resources' }
+    { title: 'Software Development', category: 'Platform', href: '#platform' },
+    { title: 'Business Solutions', category: 'Platform', href: '#platform' },
+    { title: 'Artificial Intelligence', category: 'Platform', href: '#platform' },
+    { title: 'Factory & IoT', category: 'Platform', href: '#platform' },
+    { title: 'Cloud & Infrastructure', category: 'Platform', href: '#platform' },
+    { title: 'Digital Marketing', category: 'Platform', href: '#platform' }
   ];
 
   const filteredLinks = quickLinks.filter(l => 
