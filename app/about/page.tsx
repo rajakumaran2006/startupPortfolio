@@ -34,7 +34,7 @@ export default function AboutPage() {
   const leadershipTeam = [
     {
       name: 'Vivin M',
-      title: 'Founder & CEO',
+      title: 'Team Lead',
       img: '/assets/founder-ceo.png',
       hasImage: true,
     },
@@ -50,6 +50,16 @@ export default function AboutPage() {
     },
     {
       name: 'Rajakumaran P',
+      title: 'Software Developer',
+      hasImage: false,
+    },
+    {
+      name: 'Vishwa',
+      title: 'AI Developer',
+      hasImage: false,
+    },
+    {
+      name: 'Suman Karthick',
       title: 'Software Developer',
       hasImage: false,
     },
@@ -199,7 +209,7 @@ export default function AboutPage() {
                     src={member.img!}
                     alt={member.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover scale-150 transition-transform duration-700 ease-in-out"
                   />
                 </div>
                 <div className="sm:col-span-7 space-y-3">
