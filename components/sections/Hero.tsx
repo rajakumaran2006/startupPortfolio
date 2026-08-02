@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { GeometricBackground, TrueFocus, GLSLHills, IdentityFingerprintOrbit } from '@/components/ui';
 import { ShieldCheck, Cpu, CheckCircle2, Zap, ArrowRight, Activity, Layers } from 'lucide-react';
 
@@ -10,111 +11,167 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
+  const router = useRouter();
 
-  // Logos directly from Image 2
+  // Client logos matching the About Us client section (TrustedProviders)
   const trustLogos = [
     {
-      id: 'ally',
+      id: 'destylus',
       component: (
-        <span className="font-extrabold text-2xl tracking-tighter text-[#1C1D21] font-sans">
-          ally
+        <span className="font-black text-xl tracking-tight text-[#1C1D21] font-sans">
+          destylus<span className="text-[#FF5A60]">.</span>
         </span>
       ),
     },
     {
-      id: 'mtbank',
+      id: 'hamilton',
       component: (
-        <div className="font-bold text-xl tracking-tight text-[#1C1D21] flex items-center gap-0.5">
-          <span>M&amp;T</span>
-          <span className="font-serif font-normal text-lg">Bank</span>
+        <div className="flex flex-col text-left leading-none text-[#1C1D21]">
+          <span className="font-extrabold text-sm tracking-tight">Hamilton</span>
+          <span className="text-[9px] uppercase font-bold tracking-wider text-gray-500">Learning Academy</span>
         </div>
       ),
     },
     {
-      id: 'ramp',
-      component: (
-        <div className="flex items-center gap-1.5 font-extrabold text-2xl tracking-tight text-[#1C1D21]">
-          <span>ramp</span>
-          <svg className="w-5 h-5 text-[#1C1D21] fill-current" viewBox="0 0 24 24">
-            <path d="M4 18c8 0 12-8 16-12h-4c-3 3-6 8-12 8v4z"/>
-          </svg>
-        </div>
-      ),
-    },
-    {
-      id: 'shopify',
-      component: (
-        <div className="flex items-center gap-2 font-bold text-xl tracking-tight text-[#1C1D21]">
-          <svg className="w-6 h-6 text-[#1C1D21] fill-current" viewBox="0 0 24 24">
-            <path d="M19 6.5l-2.5-1.5-1.5 2.5L12 3 9 7.5 7.5 5 5 6.5l.5 12.5h13L19 6.5z"/>
-          </svg>
-          <span>shopify</span>
-        </div>
-      ),
-    },
-    {
-      id: 'suncoast',
+      id: 'venus',
       component: (
         <div className="flex items-center gap-2 text-[#1C1D21]">
-          <div className="w-6 h-6 rounded-full bg-[#1C1D21] flex items-center justify-center p-0.5 shrink-0">
-            <div className="w-full h-full rounded-full border-2 border-white bg-[#1C1D21]" />
-          </div>
-          <div className="flex flex-col text-left leading-none">
-            <span className="font-black text-xs uppercase tracking-tight">Suncoast</span>
-            <span className="text-[9px] font-medium text-gray-700">Credit Union</span>
-          </div>
+          <svg className="w-4 h-4 text-[#1C1D21]" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="8" opacity="0.3" />
+            <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z" />
+          </svg>
+          <span className="text-lg font-bold tracking-tight">Venus School</span>
         </div>
       ),
     },
     {
-      id: 'frost',
+      id: 'monsrow',
+      component: (
+        <span className="text-2xl font-black tracking-tight text-[#1C1D21] font-display">
+          monsrow
+        </span>
+      ),
+    },
+    {
+      id: 'auratech',
+      component: (
+        <span className="text-xl font-black tracking-tight text-[#1C1D21]">
+          aura tech
+        </span>
+      ),
+    },
+    {
+      id: 'zenith',
+      component: (
+        <span className="text-base font-extrabold text-[#1C1D21] tracking-wider uppercase font-mono">
+          ZENITH
+        </span>
+      ),
+    },
+    {
+      id: 'apex',
       component: (
         <div className="flex items-center gap-2 text-[#1C1D21]">
-          <svg className="w-6 h-6 text-[#1C1D21]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-            <circle cx="12" cy="12" r="9"/>
-            <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
-          </svg>
-          <span className="font-black text-lg tracking-wider font-serif">Frost</span>
-        </div>
-      ),
-    },
-    {
-      id: 'liveoak',
-      component: (
-        <div className="flex items-center gap-1.5 text-[#1C1D21]">
-          <svg className="w-5 h-5 text-[#1C1D21] fill-current shrink-0" viewBox="0 0 24 24">
-            <path d="M12 2L8 8h3v6H8l4 6 4-6h-3V8h3l-4-6z"/>
-          </svg>
-          <div className="flex items-baseline text-left leading-none font-bold text-sm">
-            <span>LiveOak</span>
-            <span className="font-normal">Bank.</span>
+          <div className="w-5 h-5 rounded-full border-2 border-[#1C1D21] flex items-center justify-center font-black text-[10px] text-[#1C1D21]">
+            A
           </div>
-        </div>
-      ),
-    },
-    {
-      id: 'mountain',
-      component: (
-        <div className="flex items-center gap-1.5 text-[#1C1D21]">
-          <svg className="w-6 h-5 text-[#1C1D21] fill-current shrink-0" viewBox="0 0 24 24">
-            <path d="M12 2L2 19h20L12 2zm0 4l6 11H6l6-11z"/>
-          </svg>
           <div className="flex flex-col text-left leading-none">
-            <span className="font-black text-[10px] uppercase tracking-tighter">MOUNTAIN AMERICA</span>
-            <span className="text-[7.5px] font-bold uppercase tracking-widest text-gray-700">CREDIT UNION</span>
+            <span className="text-base font-black">Apex</span>
+            <span className="text-[8px] uppercase tracking-tighter font-semibold text-gray-600">Global Tech</span>
           </div>
         </div>
       ),
     },
     {
-      id: 'grasshopper',
+      id: 'novacore',
       component: (
-        <div className="flex items-center gap-1.5 text-[#1C1D21]">
-          <svg className="w-6 h-4 text-[#1C1D21]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M2 18C8 18 14 6 22 4M6 20c6 0 12-8 16-12"/>
-          </svg>
-          <span className="font-semibold text-base italic tracking-tight">Grasshopper</span>
+        <span className="text-base font-extrabold text-[#1C1D21] tracking-tight">
+          Nova Core
+        </span>
+      ),
+    },
+    {
+      id: 'nexus',
+      component: (
+        <span className="text-xl font-black text-[#1C1D21] tracking-tight">
+          Nexus
+        </span>
+      ),
+    },
+    {
+      id: 'orion',
+      component: (
+        <div className="flex flex-col text-center leading-none text-[#1C1D21]">
+          <span className="text-lg font-extrabold">Orion</span>
+          <span className="text-[8px] uppercase tracking-tighter font-medium text-gray-500 mt-0.5">Systems</span>
         </div>
+      ),
+    },
+    {
+      id: 'hyperion',
+      component: (
+        <span className="text-base font-black tracking-wider text-[#1C1D21]">
+          HYPERION
+        </span>
+      ),
+    },
+    {
+      id: 'crestview',
+      component: (
+        <span className="text-lg font-black text-[#1C1D21] tracking-tight">
+          Crestview
+        </span>
+      ),
+    },
+    {
+      id: 'beacon',
+      component: (
+        <div className="flex flex-col text-center leading-tight text-[#1C1D21]">
+          <span className="text-xs font-black uppercase tracking-wider">BEACON</span>
+          <span className="text-[7px] font-bold uppercase tracking-widest text-gray-500">International</span>
+        </div>
+      ),
+    },
+    {
+      id: 'starlight',
+      component: (
+        <span className="text-base font-extrabold text-[#1C1D21] tracking-tight">
+          Starlight
+        </span>
+      ),
+    },
+    {
+      id: 'pulse',
+      component: (
+        <span className="text-lg font-black text-[#1C1D21] tracking-tight">
+          Pulse
+        </span>
+      ),
+    },
+    {
+      id: 'velox',
+      component: (
+        <div className="flex flex-col text-left leading-none text-[#1C1D21]">
+          <span className="text-[10px] font-black uppercase tracking-tighter">VELOX TECH</span>
+          <span className="text-[7px] font-semibold uppercase tracking-tighter text-gray-500">SOLUTIONS</span>
+        </div>
+      ),
+    },
+    {
+      id: 'quantummind',
+      component: (
+        <div className="flex flex-col text-left leading-none text-[#1C1D21]">
+          <span className="text-xs font-extrabold">Quantum</span>
+          <span className="text-[7px] uppercase tracking-tighter text-gray-500">Mind AI</span>
+        </div>
+      ),
+    },
+    {
+      id: 'vanguard',
+      component: (
+        <span className="text-base font-black text-[#1C1D21] tracking-widest uppercase">
+          VANGUARD
+        </span>
       ),
     },
   ];
@@ -138,7 +195,7 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
             {/* Title Eyebrow / Description with TrueFocus animation */}
             <div className="text-center font-display w-full flex justify-center">
               <TrueFocus
-                sentence="SOFTWARE HARDWARE & DIGITAL MARKETING SOLUTIONS"
+                sentence="AI-POWERED ENTERPRISE SOFTWARE PLATFORM"
                 borderColor="#FF5A60"
                 glowColor="rgba(255, 90, 96, 0.6)"
                 blurAmount={1.5}
@@ -148,7 +205,7 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
             </div>
 
             <p className="text-lg sm:text-xl text-[#626570] font-normal leading-relaxed max-w-2xl text-center">
-              Team Monsrow is an end-to-end technology solutions company empowering businesses with custom software development, IoT hardware systems, AI automation, cloud architecture, and data-driven digital marketing.
+              Team Monsrow is an AI-powered enterprise software company empowering businesses with real-time decisioning engines, automated onboarding, fraud prevention intelligence, and seamless cloud data orchestration.
             </p>
 
             {/* CTAs */}
@@ -162,10 +219,10 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
               </button>
 
               <button
-                onClick={onOpenWorkflow}
+                onClick={() => router.push('/about')}
                 className="bg-[#FF5A60] hover:bg-[#E0484E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-7 py-4 rounded-full flex items-center gap-2 transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
-                <span>SEE HOW IT WORKS</span>
+                <span>LEARN MORE</span>
                 <span className="text-white">▶</span>
               </button>
             </div>
@@ -189,50 +246,49 @@ export default function Hero({ onOpenDemo, onOpenWorkflow }: HeroProps) {
           </div>
 
         </div>
+      </div>
 
-        {/* Continuous Marquee Trust Bar Carousel - Exact 40px top and bottom spacing */}
-        <div className="mt-[40px] pt-[40px] pb-[40px] border-t border-[#E2E0D8] overflow-hidden relative">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-[#626570] mb-4">
-            Built on industry trust from 900+ clients
-          </p>
+      {/* Continuous Marquee Trust Bar Carousel - Full Screen Corner to Corner */}
+      <div className="w-full mt-[40px] pt-[40px] pb-[40px] border-t border-[#E2E0D8] overflow-hidden relative">
+        <p className="text-center text-xs font-bold uppercase tracking-widest text-[#626570] mb-4">
+          Built on industry trust from 50+ clients
+        </p>
 
-          {/* Marquee Carousel Container */}
-          <div className="w-full overflow-hidden py-2 relative">
-            {/* Gradient fade edges for seamless carousel feel */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F4F0] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F5F4F0] to-transparent z-10 pointer-events-none" />
-            <div className="animate-marquee flex items-center gap-12 sm:gap-16">
-              {/* First loop of items */}
-              {trustLogos.map((logo, idx) => (
-                <div
-                  key={`logo-1-${logo.id}-${idx}`}
-                  className="shrink-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200 transform hover:scale-105 cursor-pointer px-2"
-                >
-                  {logo.component}
-                </div>
-              ))}
-              {/* Duplicate loop of items for infinite seamless scroll */}
-              {trustLogos.map((logo, idx) => (
-                <div
-                  key={`logo-2-${logo.id}-${idx}`}
-                  className="shrink-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200 transform hover:scale-105 cursor-pointer px-2"
-                >
-                  {logo.component}
-                </div>
-              ))}
-              {/* Triplicate loop to ensure seamless wide-screen scroll */}
-              {trustLogos.map((logo, idx) => (
-                <div
-                  key={`logo-3-${logo.id}-${idx}`}
-                  className="shrink-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200 transform hover:scale-105 cursor-pointer px-2"
-                >
-                  {logo.component}
-                </div>
-              ))}
-            </div>
+        {/* Marquee Carousel Container */}
+        <div className="w-full overflow-hidden py-2 relative">
+          {/* Gradient fade edges for seamless carousel feel matching Hero background */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-[#F5F4F0] via-[#F5F4F0]/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-[#F5F4F0] via-[#F5F4F0]/80 to-transparent z-10 pointer-events-none" />
+          <div className="animate-marquee flex items-center gap-12 sm:gap-16">
+            {/* First loop of items */}
+            {trustLogos.map((logo, idx) => (
+              <div
+                key={`logo-1-${logo.id}-${idx}`}
+                className="shrink-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200 transform hover:scale-105 cursor-pointer px-2"
+              >
+                {logo.component}
+              </div>
+            ))}
+            {/* Duplicate loop of items for infinite seamless scroll */}
+            {trustLogos.map((logo, idx) => (
+              <div
+                key={`logo-2-${logo.id}-${idx}`}
+                className="shrink-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200 transform hover:scale-105 cursor-pointer px-2"
+              >
+                {logo.component}
+              </div>
+            ))}
+            {/* Triplicate loop to ensure seamless wide-screen scroll */}
+            {trustLogos.map((logo, idx) => (
+              <div
+                key={`logo-3-${logo.id}-${idx}`}
+                className="shrink-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200 transform hover:scale-105 cursor-pointer px-2"
+              >
+                {logo.component}
+              </div>
+            ))}
           </div>
         </div>
-
       </div>
     </section>
   );

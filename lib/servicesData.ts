@@ -10,6 +10,8 @@ export interface SuiteCardItem {
   desc: string;
   bgColor: string;
   textColor: string;
+  slug?: string;
+  link?: string;
 }
 
 export interface UnifiedFeatureItem {
@@ -77,6 +79,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Automate operationally-heavy web workflows and build scalable multi-tenant SaaS architectures.',
         bgColor: 'bg-[#F8BAC0]',
         textColor: 'text-[#1C1D21]',
+        slug: 'software-development',
       },
       {
         number: '02',
@@ -84,6 +87,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'iOS and Android native and cross-platform mobile apps built for seamless user experience.',
         bgColor: 'bg-[#FF5A60]',
         textColor: 'text-[#1C1D21]',
+        slug: 'software-development',
       },
       {
         number: '03',
@@ -91,6 +95,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'High-throughput microservices, API integrations, and robust backend infrastructure.',
         bgColor: 'bg-[#A31661]',
         textColor: 'text-white',
+        slug: 'cloud-infrastructure',
       },
     ],
     unifiedTag: 'UNIFIED ENGINEERING',
@@ -184,6 +189,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Centralize finance, inventory, and supply chain management into a single real-time platform.',
         bgColor: 'bg-[#F8BAC0]',
         textColor: 'text-[#1C1D21]',
+        slug: 'business-solutions',
       },
       {
         number: '02',
@@ -191,6 +197,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Manage customer lifecycles, lead pipelines, and automated support interactions.',
         bgColor: 'bg-[#FF5A60]',
         textColor: 'text-[#1C1D21]',
+        slug: 'business-solutions',
       },
       {
         number: '03',
@@ -198,6 +205,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Automate payroll, onboarding, performance tracking, and employee compliance logging.',
         bgColor: 'bg-[#A31661]',
         textColor: 'text-white',
+        slug: 'business-solutions',
       },
     ],
     unifiedTag: 'UNIFIED ENTERPRISE',
@@ -266,7 +274,7 @@ export const servicesData: Record<string, ServiceData> = {
     clientImpactHeadline: 'Actionable AI delivers real-world value, not just informational alerts',
     testimonials: [
       {
-        quote: "Alloy's AI Assistant saves me a significant amount of time and gives me the confidence to quickly review and close watchlist alerts based on the insights it provides.",
+        quote: "Team Monsrow's AI Assistant saves me a significant amount of time and gives me the confidence to quickly review and close watchlist alerts based on the insights it provides.",
         client: 'EDGE MARKETS',
         logoText: 'EDGE MARKETS',
       },
@@ -291,6 +299,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Automate operationally-heavy tasks and eliminate manual friction in risk and compliance workflows.',
         bgColor: 'bg-[#F8BAC0]',
         textColor: 'text-[#1C1D21]',
+        slug: 'artificial-intelligence',
       },
       {
         number: '02',
@@ -298,6 +307,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Score customer risk to surface suspicious behavior throughout the customer lifecycle.',
         bgColor: 'bg-[#FF5A60]',
         textColor: 'text-[#1C1D21]',
+        slug: 'artificial-intelligence',
       },
       {
         number: '03',
@@ -305,6 +315,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Detect coordinated fraud attacks at account opening across your origination channel.',
         bgColor: 'bg-[#A31661]',
         textColor: 'text-white',
+        slug: 'artificial-intelligence',
       },
     ],
     unifiedTag: 'UNIFIED AI',
@@ -398,6 +409,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Connect temperature, vibration, and pressure sensors with sub-second MQTT data ingestion.',
         bgColor: 'bg-[#F8BAC0]',
         textColor: 'text-[#1C1D21]',
+        slug: 'factory-iot',
       },
       {
         number: '02',
@@ -405,6 +417,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Analyze machine wear-and-tear patterns to schedule repairs before breakdown.',
         bgColor: 'bg-[#FF5A60]',
         textColor: 'text-[#1C1D21]',
+        slug: 'artificial-intelligence',
       },
       {
         number: '03',
@@ -412,6 +425,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Unified supervisory dashboard for factory managers, line operators, and executive oversight.',
         bgColor: 'bg-[#A31661]',
         textColor: 'text-white',
+        slug: 'factory-iot',
       },
     ],
     unifiedTag: 'UNIFIED IOT',
@@ -505,6 +519,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Deploy resilient container clusters with dynamic auto-scaling and zero-downtime rolling updates.',
         bgColor: 'bg-[#F8BAC0]',
         textColor: 'text-[#1C1D21]',
+        slug: 'cloud-infrastructure',
       },
       {
         number: '02',
@@ -512,6 +527,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'REST and GraphQL endpoints engineered for sub-20ms responses and global rate limiting.',
         bgColor: 'bg-[#FF5A60]',
         textColor: 'text-[#1C1D21]',
+        slug: 'cloud-infrastructure',
       },
       {
         number: '03',
@@ -519,6 +535,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Infrastructure-as-code scripts, automated security scanning, and SOC 2 auditable deployments.',
         bgColor: 'bg-[#A31661]',
         textColor: 'text-white',
+        slug: 'cloud-infrastructure',
       },
     ],
     unifiedTag: 'UNIFIED CLOUD',
@@ -612,6 +629,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Dominating search results with optimized site performance, keyword authority, and structured data.',
         bgColor: 'bg-[#F8BAC0]',
         textColor: 'text-[#1C1D21]',
+        slug: 'digital-marketing',
       },
       {
         number: '02',
@@ -619,6 +637,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Precision targeted campaign management across Google Ads, LinkedIn, and programmatic channels.',
         bgColor: 'bg-[#FF5A60]',
         textColor: 'text-[#1C1D21]',
+        slug: 'digital-marketing',
       },
       {
         number: '03',
@@ -626,6 +645,7 @@ export const servicesData: Record<string, ServiceData> = {
         desc: 'Data-backed UX optimizations, A/B testing, and lead capture workflows to boost conversion rates.',
         bgColor: 'bg-[#A31661]',
         textColor: 'text-white',
+        slug: 'digital-marketing',
       },
     ],
     unifiedTag: 'UNIFIED MARKETING',

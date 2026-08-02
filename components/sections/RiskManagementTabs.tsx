@@ -274,10 +274,10 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
 
               <div className="pt-4">
                 <button
-                  onClick={onOpenWorkflow}
+                  onClick={onOpenDemo}
                   className="bg-transparent border border-[#1C1D21] text-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all group cursor-pointer"
                 >
-                  <span>EXPLORE ONBOARDING</span>
+                  <span>SCHEDULE A DEMO</span>
                   <span className="text-xs group-hover:translate-x-0.5 transition-transform">▶</span>
                 </button>
               </div>
@@ -325,10 +325,10 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
 
               <div className="pt-4">
                 <button
-                  onClick={onOpenWorkflow}
+                  onClick={onOpenDemo}
                   className="bg-transparent border border-[#1C1D21] text-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all group cursor-pointer"
                 >
-                  <span>EXPLORE FRAUD PREVENTION</span>
+                  <span>SCHEDULE A DEMO</span>
                   <span className="text-xs text-[#FF5A60] group-hover:text-white group-hover:translate-x-0.5 transition-all">▶</span>
                 </button>
               </div>
@@ -376,10 +376,10 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
 
               <div className="pt-4">
                 <button
-                  onClick={onOpenWorkflow}
+                  onClick={onOpenDemo}
                   className="bg-transparent border border-[#1C1D21] text-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all group cursor-pointer"
                 >
-                  <span>EXPLORE COMPLIANCE</span>
+                  <span>SCHEDULE A DEMO</span>
                   <span className="text-xs text-[#EAB308] group-hover:text-white group-hover:translate-x-0.5 transition-all">▶</span>
                 </button>
               </div>
@@ -427,20 +427,20 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
                         
                         {/* Approved (Green) */}
-                        <div className="bg-[#E8F8F0] border border-[#A7F3D0] text-[#10B981] px-4 py-3 rounded-2xl text-center flex items-center justify-center gap-2 text-sm font-medium shadow-xs hover:scale-105 transition-transform cursor-pointer">
-                          <Check className="w-4 h-4 text-[#10B981]" />
+                        <div className="bg-[#EFEFEF] border border-gray-300 text-[#1C1D21]  px-4 py-3 rounded-2xl text-center flex items-center justify-center gap-2 text-sm font-medium shadow-xs hover:scale-105 transition-transform cursor-pointer">
+                          <Check className="w-4 h-4 text-gray-700" />
                           <span>Approved</span>
                         </div>
 
                         {/* Denied (Red) */}
-                        <div className="bg-[#FEEFEF] border border-[#FECACA] text-[#EF4444] px-4 py-3 rounded-2xl text-center flex items-center justify-center gap-2 text-sm font-medium shadow-xs hover:scale-105 transition-transform cursor-pointer">
-                          <X className="w-4 h-4 text-[#EF4444]" />
+                        <div className="bg-[#EFEFEF] border border-gray-300 text-[#1C1D21]  px-4 py-3 rounded-2xl text-center flex items-center justify-center gap-2 text-sm font-medium shadow-xs hover:scale-105 transition-transform cursor-pointer">
+                          <X className="w-4 h-4 text-gray-700" />
                           <span>Denied</span>
                         </div>
 
                         {/* Review (Yellow) */}
-                        <div className="bg-[#FFFBEB] border border-[#FDE68A] text-[#F59E0B] px-4 py-3 rounded-2xl text-center flex items-center justify-center gap-2 text-sm font-medium shadow-xs hover:scale-105 transition-transform cursor-pointer">
-                          <Edit3 className="w-4 h-4 text-[#F59E0B]" />
+                        <div className="bg-[#EFEFEF] border border-gray-300 text-[#1C1D21]  px-4 py-3 rounded-2xl text-center flex items-center justify-center gap-2 text-sm font-medium shadow-xs hover:scale-105 transition-transform cursor-pointer">
+                          <Edit3 className="w-4 h-4 text-gray-700" />
                           <span>Review</span>
                         </div>
 
@@ -465,16 +465,13 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                     {/* Top Header Row matching Image 2 */}
                     <div className="flex items-center justify-between pb-2">
                       <div className="flex items-center gap-2">
-                        <span className="font-extrabold text-lg tracking-tight text-[#1C1D21]">Fraud Signal</span>
-                        <div className="bg-red-50 border border-red-200 text-red-600 text-xs font-mono font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                          <Activity className="w-3 h-3 text-red-500" />
-                          <span>.91</span>
-                        </div>
+                        <span className="font-extrabold text-lg tracking-tight text-[#1C1D21]">AI Risk Signal</span>
+
                       </div>
-                      <span className="text-xs font-medium text-gray-500">Jane Doe</span>
+                      <span className="text-xs font-semibold text-[#FF5A60]">Rahul Sharma (+91 98765 43210)</span>
                     </div>
 
-                    {/* Time-Series Line Graph SVG matching Image 2 */}
+                    {/* Time-Series Line Graph SVG */}
                     <div className="relative h-40 my-3 w-full">
                       
                       {/* Vertical Alert Lightning Lines */}
@@ -486,9 +483,6 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                           <Zap className="w-3 h-3 text-blue-500 absolute -top-3 -left-1.5 fill-blue-500" />
                         </div>
                         <div className="h-full border-r border-dashed border-blue-400 relative left-[75%]">
-                          <Zap className="w-3 h-3 text-blue-500 absolute -top-3 -left-1.5 fill-blue-500" />
-                        </div>
-                        <div className="h-full border-r border-dashed border-blue-400 relative left-[80%]">
                           <Zap className="w-3 h-3 text-blue-500 absolute -top-3 -left-1.5 fill-blue-500" />
                         </div>
                       </div>
@@ -516,48 +510,45 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                       </svg>
                     </div>
 
-                    {/* Chart Legend Pills Row matching Image 2 */}
+                    {/* Chart Legend Pills Row */}
                     <div className="flex flex-wrap items-center gap-2 text-[10px] sm:text-xs pt-1 pb-3 text-gray-600">
                       <span className="bg-teal-50 text-teal-700 px-2 py-0.5 rounded font-medium flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-teal-400" /> Low &lt; 25
+                        <span className="w-2 h-2 rounded-full bg-teal-400" /> Optimal Speed
                       </span>
                       <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded font-medium flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-amber-400" /> Mid 25 - 80
+                        <span className="w-2 h-2 rounded-full bg-amber-400" /> ₹25Cr+ Processed
                       </span>
                       <span className="bg-red-50 text-red-700 px-2 py-0.5 rounded font-medium flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-red-500" /> High &gt; 80
-                      </span>
-                      <span className="text-gray-500 flex items-center gap-1">
-                        <span className="w-2.5 h-2.5 rounded-full border border-gray-400" /> FS Score
+                        <span className="w-2 h-2 rounded-full bg-red-500" /> High Traffic
                       </span>
                       <span className="text-blue-600 flex items-center gap-1 font-semibold">
-                        <Zap className="w-2.5 h-2.5" /> Alert
+                        <Zap className="w-2.5 h-2.5" /> Live Node
                       </span>
                     </div>
 
-                    {/* Bottom Risk Indicators Grid matching Image 2 */}
+                    {/* Bottom Risk Indicators Grid */}
                     <div className="pt-2 border-t border-gray-100">
                       <div className="flex items-center gap-1 text-[10px] text-gray-500 font-semibold mb-2">
-                        <span>Top Fraud Signal Indicators</span>
+                        <span>India Enterprise Tech Indicators</span>
                         <Info className="w-3 h-3 text-gray-400" />
                       </div>
 
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div className="bg-gray-100/90 text-gray-800 px-3 py-1.5 rounded-lg flex items-center gap-2 font-medium">
-                          <Activity className="w-3.5 h-3.5 text-red-500" />
-                          <span className="truncate">Account Dormancy</span>
+                          <Activity className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="truncate">Mumbai AWS IN-WEST Node</span>
                         </div>
                         <div className="bg-gray-100/90 text-gray-800 px-3 py-1.5 rounded-lg flex items-center gap-2 font-medium">
-                          <Activity className="w-3.5 h-3.5 text-red-500" />
-                          <span className="truncate">Excessive Wire Transfers</span>
+                          <Activity className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="truncate">+91 98765 43210 (Verified)</span>
                         </div>
                         <div className="bg-gray-100/90 text-gray-800 px-3 py-1.5 rounded-lg flex items-center gap-2 font-medium">
-                          <Activity className="w-3.5 h-3.5 text-red-500" />
-                          <span className="truncate">PII Match</span>
+                          <Activity className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="truncate">UPI & API Gateway Sync</span>
                         </div>
                         <div className="bg-gray-100/90 text-gray-800 px-3 py-1.5 rounded-lg flex items-center gap-2 font-medium">
-                          <Activity className="w-3.5 h-3.5 text-red-500" />
-                          <span className="truncate">Transaction High-Amounts</span>
+                          <Activity className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="truncate">Sub-45ms Real-Time Latency</span>
                         </div>
                       </div>
                     </div>

@@ -20,6 +20,7 @@ export default function ContactPage() {
   const [isWorkflowOpen, setIsWorkflowOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Form inputs matching Image 2
   const [formData, setFormData] = useState({
@@ -39,22 +40,34 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    soundFX.playSuccess();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        businessEmail: '',
-        firstName: '',
-        lastName: '',
-        phoneNumber: '',
-        companyName: '',
-        howCanWeHelp: '',
-        howDidYouHear: ''
+    setIsLoading(true);
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'contact', ...formData }),
       });
-    }, 4000);
+    } catch (err) {
+      console.error('Contact lead error:', err);
+    } finally {
+      setIsLoading(false);
+      soundFX.playSuccess();
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          businessEmail: '',
+          firstName: '',
+          lastName: '',
+          phoneNumber: '',
+          companyName: '',
+          howCanWeHelp: '',
+          howDidYouHear: ''
+        });
+      }, 4000);
+    }
   };
 
   return (
@@ -74,21 +87,21 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             
             {/* Left White Hero Box (Matching Image 2 left side) */}
-            <div className="lg:col-span-5 bg-white rounded-3xl p-8 sm:p-12 border border-[#E4E2DC] shadow-xs flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#E4E2DC] shadow-xs flex flex-col justify-between space-y-4">
               <div>
-                <span className="inline-block text-xs font-bold uppercase tracking-wider text-gray-500 mb-6">
+                <span className="inline-block text-xs sm:text-[13px] font-bold uppercase tracking-[0.2em] text-[#1C1D21] mb-4">
                   CONTACT US
                 </span>
-                <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-[#1C1D21] font-display mb-6 leading-[1.08]">
+                <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#1C1D21] leading-[1.18] tracking-tight font-sans mb-4 sm:mb-5">
                   We'd love to hear <br className="hidden sm:inline" />from you
                 </h1>
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-normal mb-8">
+                <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal mb-6">
                   Please fill out the quick form, and we will be in touch!
                 </p>
               </div>
 
               {/* Direct Info Highlights */}
-              <div className="pt-6 border-t border-gray-100 space-y-4">
+              <div className="pt-4 border-t border-gray-100 space-y-4">
                 <div className="flex items-center gap-3 text-sm font-semibold text-[#1C1D21]">
                   <div className="w-9 h-9 rounded-xl bg-[#F4F3EF] flex items-center justify-center text-[#FF5A6E]">
                     <Mail className="w-4 h-4" />
@@ -251,9 +264,10 @@ export default function ContactPage() {
                   <div>
                     <button
                       type="submit"
-                      className="px-8 py-3.5 bg-[#FF5A6E] hover:bg-[#E0475B] text-white font-bold rounded-xl text-sm transition-all cursor-pointer shadow-sm hover:shadow"
+                      disabled={isLoading}
+                      className="px-8 py-3.5 bg-[#FF5A6E] hover:bg-[#E0475B] disabled:opacity-60 text-white font-bold rounded-xl text-sm transition-all cursor-pointer shadow-sm hover:shadow"
                     >
-                      Submit
+                      {isLoading ? 'Sending…' : 'Submit'}
                     </button>
                   </div>
 
@@ -297,14 +311,14 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              {/* Card 2: Recent Press (Coral Red #FF576D) */}
+              {/* Card 2: Our Story (Coral Red #FF576D) */}
               <a 
                 href="/about"
                 onClick={() => soundFX.playClick()}
                 className="bg-[#FF576D] text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-h-[160px] group transition-transform hover:-translate-y-1 shadow-2xs"
               >
                 <h3 className="text-2xl font-extrabold font-display">
-                  Recent Press
+                  Our Story
                 </h3>
                 <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider mt-4">
                   <div className="w-7 h-7 rounded-full bg-white text-[#1C1D21] flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -314,14 +328,14 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              {/* Card 3: See what's new (Plum Purple #9B1B5B) */}
+              {/* Card 3: Industries We Serve (Plum Purple #9B1B5B) */}
               <a 
-                href="/service"
+                href="/industries"
                 onClick={() => soundFX.playClick()}
                 className="bg-[#9B1B5B] text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-h-[160px] group transition-transform hover:-translate-y-1 shadow-2xs"
               >
                 <h3 className="text-2xl font-extrabold font-display">
-                  See what's new
+                  Industries We Serve
                 </h3>
                 <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider mt-4">
                   <div className="w-7 h-7 rounded-full bg-white text-[#1C1D21] flex items-center justify-center group-hover:scale-110 transition-transform">

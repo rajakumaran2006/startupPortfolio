@@ -20,12 +20,30 @@ export default function ScheduleDemoModal({ isOpen, onClose }: ScheduleDemoModal
     preferredTime: '10:00 AM EST'
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [leadId, setLeadId] = useState<string>('');
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsLoading(true);
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'demo', ...formData }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setLeadId(json.leadId);
+      }
+    } catch (err) {
+      console.error('Demo lead error:', err);
+    } finally {
+      setIsLoading(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -59,9 +77,13 @@ export default function ScheduleDemoModal({ isOpen, onClose }: ScheduleDemoModal
               <div><strong>Confirmation Code:</strong> MONSROW-DEMO-9021</div>
             </div>
 
+            {leadId && (
+              <p className="text-[10px] text-gray-400">Ref: {leadId}</p>
+            )}
             <button
               onClick={() => {
                 setSubmitted(false);
+                setLeadId('');
                 onClose();
               }}
               className="bg-[#1C1D21] text-white text-xs font-bold uppercase px-8 py-3.5 rounded-full hover:bg-[#FF5A60] transition-colors"
@@ -80,7 +102,7 @@ export default function ScheduleDemoModal({ isOpen, onClose }: ScheduleDemoModal
                 Schedule a 1-on-1 Team Monsrow Demo
               </h3>
               <p className="text-xs text-gray-500">
-                See how top financial institutions automate onboarding, stop synthetic fraud, and streamline compliance.
+                See how top global enterprises build custom software, deploy AI automation, and scale cloud infrastructure.
               </p>
             </div>
 
@@ -182,10 +204,11 @@ export default function ScheduleDemoModal({ isOpen, onClose }: ScheduleDemoModal
               <span className="text-[10px] text-gray-400">SOC 2 Type II Encrypted</span>
               <button
                 type="submit"
-                className="bg-[#1C1D21] hover:bg-[#FF5A60] text-white text-xs font-bold uppercase px-8 py-3.5 rounded-full transition-colors flex items-center gap-2"
+                disabled={isLoading}
+                className="bg-[#1C1D21] hover:bg-[#FF5A60] disabled:opacity-60 text-white text-xs font-bold uppercase px-8 py-3.5 rounded-full transition-colors flex items-center gap-2"
               >
-                <span>CONFIRM DEMO BOOKING</span>
-                <span className="text-[#FF5A60] group-hover:text-white">▶</span>
+                <span>{isLoading ? 'BOOKING…' : 'CONFIRM DEMO BOOKING'}</span>
+                {!isLoading && <span className="text-[#FF5A60] group-hover:text-white">▶</span>}
               </button>
             </div>
 

@@ -154,6 +154,20 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                 </button>
 
                 <button
+                  onClick={() => toggleMenu('industries')}
+                  className={`flex items-center gap-1.5 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
+                    activeMenu === 'industries' ? 'font-semibold text-[#1C1D21]' : 'text-gray-800 hover:text-black'
+                  }`}
+                >
+                  <span>Industries</span>
+                  {activeMenu === 'industries' ? (
+                    <ChevronUp className="w-4 h-4 text-black stroke-[2.5]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-gray-700 stroke-[2.5]" />
+                  )}
+                </button>
+
+                <button
                   onClick={() => {
                     soundFX.playClick();
                     closeMenus();
@@ -254,7 +268,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <span>All Services</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-[#1C1D21] leading-snug tracking-tight font-display">
-                      Team Monsrow&apos;s open data ecosystem, orchestration engine, and Actionable AI form a unified platform that gets smarter with every signal and every decision.
+                      Team Monsrow&apos;s open data ecosystem, orchestration engine, and Actionable AI form a unified platform.
                     </h3>
                   </div>
 
@@ -272,7 +286,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <div className="flex items-start gap-4 pr-2">
                         <Code2 className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
                         <div className="space-y-1">
-                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug whitespace-nowrap">
                             Software Development
                           </h4>
                           <p className="text-xs text-[#525560] leading-relaxed font-normal">
@@ -294,7 +308,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <div className="flex items-start gap-4 pr-2">
                         <Briefcase className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
                         <div className="space-y-1">
-                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug whitespace-nowrap">
                             Business Solutions
                           </h4>
                           <p className="text-xs text-[#525560] leading-relaxed font-normal">
@@ -316,7 +330,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <div className="flex items-start gap-4 pr-2">
                         <Sparkles className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
                         <div className="space-y-1">
-                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug whitespace-nowrap">
                             Artificial Intelligence
                           </h4>
                           <p className="text-xs text-[#525560] leading-relaxed font-normal">
@@ -327,7 +341,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
                     </div>
 
-                    {/* Card 4: Factory & IoT */}
+                    {/* Card 4: Factory Automation */}
                     <div 
                       onClick={() => {
                         closeMenus();
@@ -338,8 +352,8 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <div className="flex items-start gap-4 pr-2">
                         <Cpu className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
                         <div className="space-y-1">
-                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
-                            Factory &amp; IoT
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug whitespace-nowrap">
+                            Factory Automation
                           </h4>
                           <p className="text-xs text-[#525560] leading-relaxed font-normal">
                             Connect factories with automation, IoT, and smart monitoring.
@@ -349,7 +363,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
                     </div>
 
-                    {/* Card 5: Cloud & Infrastructure */}
+                    {/* Card 5: Cloud Infrastructure */}
                     <div 
                       onClick={() => {
                         closeMenus();
@@ -360,8 +374,8 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <div className="flex items-start gap-4 pr-2">
                         <Cloud className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
                         <div className="space-y-1">
-                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
-                            Cloud &amp; Infrastructure
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug whitespace-nowrap">
+                            Cloud Infrastructure
                           </h4>
                           <p className="text-xs text-[#525560] leading-relaxed font-normal">
                             Deploy secure cloud platforms, APIs, and scalable infrastructure.
@@ -382,11 +396,165 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
                       <div className="flex items-start gap-4 pr-2">
                         <TrendingUp className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
                         <div className="space-y-1">
-                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug whitespace-nowrap">
                             Digital Marketing
                           </h4>
                           <p className="text-xs text-[#525560] leading-relaxed font-normal">
                             Grow your business through SEO, advertising, and lead generation.
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* INDUSTRIES MEGA MENU */}
+              {activeMenu === 'industries' && (
+                <div className="space-y-6">
+                  {/* Header Tag & Description */}
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div className="space-y-2 max-w-3xl">
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1C1D21]">
+                        <span className="w-2 h-2 rounded-full bg-[#FF5A60]" />
+                        <span>INDUSTRIES WE SERVE</span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-[#1C1D21] leading-snug tracking-tight font-display">
+                        Custom software engineering, cloud systems &amp; AI platforms built for every major industry sector.
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* 6 Industry Grid Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 pt-2">
+                    
+                    {/* Industry 1: Manufacturing & Industrial */}
+                    <div 
+                      onClick={() => {
+                        closeMenus();
+                        router.push('/industries/manufacturing');
+                      }}
+                      className="bg-[#EBE9E4] hover:bg-[#F89DA9] transition-all duration-200 rounded-2xl p-4.5 sm:p-5 border border-transparent hover:border-[#F48695]/60 flex items-start justify-between cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4 pr-2">
+                        <Cpu className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                            Manufacturing &amp; Industrial
+                          </h4>
+                          <p className="text-xs text-[#525560] leading-relaxed font-normal">
+                            Automate IIoT telemetry, predictive maintenance AI, and shop-floor ERP integration.
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
+                    </div>
+
+                    {/* Industry 2: Healthcare & Life Sciences */}
+                    <div 
+                      onClick={() => {
+                        closeMenus();
+                        router.push('/industries/healthcare');
+                      }}
+                      className="bg-[#EBE9E4] hover:bg-[#F89DA9] transition-all duration-200 rounded-2xl p-4.5 sm:p-5 border border-transparent hover:border-[#F48695]/60 flex items-start justify-between cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4 pr-2">
+                        <ShieldCheck className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                            Healthcare &amp; Life Sciences
+                          </h4>
+                          <p className="text-xs text-[#525560] leading-relaxed font-normal">
+                            HIPAA-compliant EHR portals, telemedicine apps, and AI medical diagnostics.
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
+                    </div>
+
+                    {/* Industry 3: Education & EdTech */}
+                    <div 
+                      onClick={() => {
+                        closeMenus();
+                        router.push('/industries/education');
+                      }}
+                      className="bg-[#EBE9E4] hover:bg-[#F89DA9] transition-all duration-200 rounded-2xl p-4.5 sm:p-5 border border-transparent hover:border-[#F48695]/60 flex items-start justify-between cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4 pr-2">
+                        <Users className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                            Education &amp; EdTech
+                          </h4>
+                          <p className="text-xs text-[#525560] leading-relaxed font-normal">
+                            Custom EdTech LMS portals, virtual classrooms, and AI student analytics.
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
+                    </div>
+
+                    {/* Industry 4: Finance & Banking */}
+                    <div 
+                      onClick={() => {
+                        closeMenus();
+                        router.push('/industries/finance');
+                      }}
+                      className="bg-[#EBE9E4] hover:bg-[#F89DA9] transition-all duration-200 rounded-2xl p-4.5 sm:p-5 border border-transparent hover:border-[#F48695]/60 flex items-start justify-between cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4 pr-2">
+                        <Building2 className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                            Finance &amp; Banking
+                          </h4>
+                          <p className="text-xs text-[#525560] leading-relaxed font-normal">
+                            Core banking APIs, real-time payment gateways, and AI fraud prevention.
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
+                    </div>
+
+                    {/* Industry 5: SaaS & Enterprise Tech */}
+                    <div 
+                      onClick={() => {
+                        closeMenus();
+                        router.push('/industries/saas');
+                      }}
+                      className="bg-[#EBE9E4] hover:bg-[#F89DA9] transition-all duration-200 rounded-2xl p-4.5 sm:p-5 border border-transparent hover:border-[#F48695]/60 flex items-start justify-between cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4 pr-2">
+                        <Zap className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                            SaaS &amp; Enterprise Tech
+                          </h4>
+                          <p className="text-xs text-[#525560] leading-relaxed font-normal">
+                            Multi-tenant SaaS platforms, microservices architecture, and cloud APIs.
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[#1C1D21]/60 group-hover:text-[#1C1D21] group-hover:translate-x-1 transition-all pt-1 text-[10px] shrink-0">▶</span>
+                    </div>
+
+                    {/* Industry 6: Retail & E-Commerce */}
+                    <div 
+                      onClick={() => {
+                        closeMenus();
+                        router.push('/industries/ecommerce');
+                      }}
+                      className="bg-[#EBE9E4] hover:bg-[#F89DA9] transition-all duration-200 rounded-2xl p-4.5 sm:p-5 border border-transparent hover:border-[#F48695]/60 flex items-start justify-between cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4 pr-2">
+                        <Sliders className="w-6 h-6 stroke-[1.8] text-[#1C1D21] shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-[#1C1D21] text-sm sm:text-base leading-snug">
+                            Retail &amp; E-Commerce
+                          </h4>
+                          <p className="text-xs text-[#525560] leading-relaxed font-normal">
+                            Headless e-commerce stores, AI product recommendations, and inventory systems.
                           </p>
                         </div>
                       </div>
@@ -490,10 +658,10 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
                     {[
-                      { title: '2026 State of Fraud Report', desc: 'Key benchmarks and threat trends across 900+ fraud teams.', icon: FileText },
+                      { title: '2026 AI Enterprise Report', desc: 'Key benchmarks and tech trends across 50+ enterprise engineering teams.', icon: FileText },
                       { title: 'Developer Hub & API Docs', desc: 'REST endpoints, Webhooks, and SDK integration guides.', icon: Cpu },
-                      { title: 'Customer Case Studies', desc: 'How leading institutions reduced fraud losses by 40%.', icon: BookOpen },
-                      { title: 'Team Monsrow Insights Blog', desc: 'Latest analysis on agentic AI, SAR filings, and AML rules.', icon: Sparkles }
+                      { title: 'Customer Case Studies', desc: 'How leading enterprises accelerated digital transformation by 40%.', icon: BookOpen },
+                      { title: 'Team Monsrow Insights Blog', desc: 'Latest analysis on agentic AI, software architecture, and cloud tech.', icon: Sparkles }
                     ].map((res, i) => (
                       <div 
                         key={i}
@@ -523,7 +691,7 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
           {mobileOpen && (
             <div className="lg:hidden mt-4 pt-4 border-t border-[#DCDAD2] space-y-4 animate-in slide-in-from-top duration-200 max-h-[calc(100vh-120px)] overflow-y-auto">
               <div className="space-y-2">
-                {['platform', 'useCases', 'whoWeWorkWith'].map((key) => (
+                {['platform', 'industries', 'useCases', 'whoWeWorkWith'].map((key) => (
                   <button
                     key={key}
                     onClick={() => {

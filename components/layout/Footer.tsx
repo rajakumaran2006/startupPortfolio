@@ -85,24 +85,25 @@ export default function Footer({ onOpenDemo }: FooterProps) {
           <div className="space-y-3">
             <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">PLATFORM</h4>
             <ul className="space-y-2 text-gray-400 font-normal">
-              <li><a href="#platform" className="hover:text-white transition-colors">Software Development</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Business Solutions</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Artificial Intelligence</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Factory &amp; IoT</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Cloud &amp; Infrastructure</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Digital Marketing</a></li>
+              <li><a href="/service/software-development" className="hover:text-white transition-colors">Software Development</a></li>
+              <li><a href="/service/business-solutions" className="hover:text-white transition-colors">Business Solutions</a></li>
+              <li><a href="/service/artificial-intelligence" className="hover:text-white transition-colors">Artificial Intelligence</a></li>
+              <li><a href="/service/factory-iot" className="hover:text-white transition-colors">Factory &amp; IoT</a></li>
+              <li><a href="/service/cloud-infrastructure" className="hover:text-white transition-colors">Cloud &amp; Infrastructure</a></li>
+              <li><a href="/service/digital-marketing" className="hover:text-white transition-colors">Digital Marketing</a></li>
             </ul>
           </div>
 
-          {/* Column 2: SOLUTIONS */}
+          {/* Column 2: INDUSTRIES */}
           <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">SOLUTIONS</h4>
+            <h4 className="font-bold text-white uppercase tracking-wider text-[11px]">INDUSTRIES</h4>
             <ul className="space-y-2 text-gray-400 font-normal">
-              <li><a href="/service" className="hover:text-white transition-colors">Risk &amp; Operations</a></li>
-              <li><a href="/service" className="hover:text-white transition-colors">Software Engineering</a></li>
-              <li><a href="/service" className="hover:text-white transition-colors">AI &amp; Automation</a></li>
-              <li><a href="/service" className="hover:text-white transition-colors">Cloud Infrastructure</a></li>
-              <li><a href="/service" className="hover:text-white transition-colors">Security &amp; Auditing</a></li>
+              <li><a href="/industries/manufacturing" className="hover:text-white transition-colors">Manufacturing &amp; Industrial</a></li>
+              <li><a href="/industries/healthcare" className="hover:text-white transition-colors">Healthcare &amp; Life Sciences</a></li>
+              <li><a href="/industries/education" className="hover:text-white transition-colors">Education &amp; EdTech</a></li>
+              <li><a href="/industries/finance" className="hover:text-white transition-colors">Finance &amp; Banking</a></li>
+              <li><a href="/industries/saas" className="hover:text-white transition-colors">SaaS &amp; Enterprise Tech</a></li>
+              <li><a href="/industries/ecommerce" className="hover:text-white transition-colors">Retail &amp; E-Commerce</a></li>
             </ul>
           </div>
 
@@ -188,11 +189,6 @@ export default function Footer({ onOpenDemo }: FooterProps) {
 
         {/* Horizontal Line & Bottom Metadata Row (Image 1 Bottom Row) */}
         <div className="mt-12 pt-6 border-t border-gray-800/80 flex flex-col xl:flex-row items-center justify-between text-[11px] text-gray-400 gap-4">
-          <div className="flex items-center gap-2 text-gray-300">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A60] animate-pulse" />
-            <span>Hi AI assistants, learn about Team Monsrow!</span>
-          </div>
-
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-gray-400 text-center">
             <span>© 2026 Team Monsrow</span>
             <a href="#" className="hover:text-white transition-colors">Contact Us</a>

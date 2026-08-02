@@ -1,19 +1,23 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { ScrollReveal } from '@/components/ui';
 
 interface PlatformGridProps {
-  onOpenWorkflow: () => void;
+  onOpenWorkflow?: () => void;
 }
 
 export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
+  const router = useRouter();
+
   const platformCards = [
     {
       number: '01',
       title: 'Software & App Engineering',
       description: "Custom web applications, mobile apps, enterprise SaaS, ERP, CRM, and HRMS platforms built with cutting-edge software architecture.",
       cta: 'EXPLORE SOFTWARE SOLUTIONS',
+      slug: 'software-development',
       icon: (
         <svg className="w-14 h-14 text-[#1C1D21]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
           {/* Orbital Atom Geometry */}
@@ -29,9 +33,30 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
     },
     {
       number: '02',
+      title: 'AI & Digital Growth',
+      description: "Actionable AI, automated predictive machine learning models, cloud infrastructure, and data-driven performance digital marketing.",
+      cta: 'EXPLORE AI & DIGITAL MARKETING',
+      slug: 'artificial-intelligence',
+      icon: (
+        <svg className="w-14 h-14 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
+          {/* AI Profile Head & Circuits */}
+          <path d="M 40 20 C 65 20, 75 35, 75 50 C 75 62, 68 70, 68 80 L 32 80 C 32 70, 25 62, 25 50 C 25 35, 35 20, 40 20 Z" />
+          <circle cx="50" cy="42" r="4" fill="currentColor" />
+          <line x1="50" y1="46" x2="50" y2="60" stroke="currentColor" />
+          <line x1="50" y1="52" x2="62" y2="52" stroke="currentColor" />
+          <circle cx="64" cy="52" r="2.5" fill="currentColor" />
+        </svg>
+      ),
+      bgColor: 'bg-[#A31661]',
+      textColor: 'text-white',
+      btnBg: 'bg-transparent border border-white text-white hover:bg-white hover:text-[#A31661]',
+    },
+    {
+      number: '03',
       title: 'Factory & Hardware IoT',
       description: "Connect physical plants, industrial machinery, and smart hardware sensors with real-time IoT monitoring and embedded automation engines.",
       cta: 'EXPLORE HARDWARE & IOT',
+      slug: 'factory-iot',
       icon: (
         <svg className="w-14 h-14 text-[#1C1D21]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
           {/* Orchestration Network Cluster */}
@@ -49,26 +74,7 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
       bgColor: 'bg-[#FF5A60]',
       textColor: 'text-[#1C1D21]',
       btnBg: 'bg-transparent border border-[#1C1D21] text-[#1C1D21] hover:bg-[#1C1D21] hover:text-white',
-    },
-    {
-      number: '03',
-      title: 'AI & Digital Growth',
-      description: "Actionable AI, automated predictive machine learning models, cloud infrastructure, and data-driven performance digital marketing.",
-      cta: 'EXPLORE AI & DIGITAL MARKETING',
-      icon: (
-        <svg className="w-14 h-14 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
-          {/* AI Profile Head & Circuits */}
-          <path d="M 40 20 C 65 20, 75 35, 75 50 C 75 62, 68 70, 68 80 L 32 80 C 32 70, 25 62, 25 50 C 25 35, 35 20, 40 20 Z" />
-          <circle cx="50" cy="42" r="4" fill="currentColor" />
-          <line x1="50" y1="46" x2="50" y2="60" stroke="currentColor" />
-          <line x1="50" y1="52" x2="62" y2="52" stroke="currentColor" />
-          <circle cx="64" cy="52" r="2.5" fill="currentColor" />
-        </svg>
-      ),
-      bgColor: 'bg-[#A31661]',
-      textColor: 'text-white',
-      btnBg: 'bg-transparent border border-white text-white hover:bg-white hover:text-[#A31661]',
-    },
+    }
   ];
 
   return (
@@ -128,7 +134,7 @@ export default function PlatformGrid({ onOpenWorkflow }: PlatformGridProps) {
               {/* Bottom Action Button */}
               <div className="pt-6">
                 <button
-                  onClick={onOpenWorkflow}
+                  onClick={() => router.push(`/service/${card.slug}`)}
                   className={`${card.btnBg} text-[10px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full inline-flex items-center gap-2 transition-all cursor-pointer`}
                 >
                   <span>{card.cta}</span>

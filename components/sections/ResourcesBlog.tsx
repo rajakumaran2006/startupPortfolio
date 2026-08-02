@@ -27,10 +27,10 @@ export default function ResourcesBlog({ onOpenDemo, onOpenWorkflow }: ResourcesB
           <div className="space-y-2">
             <div className="flex items-center gap-1.5 text-[#FF5A60] font-bold text-xs uppercase tracking-widest">
               <span className="text-[10px]">▲</span>
-              <span>RESOURCES</span>
+              <span>LATEST UPDATES</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-normal text-[#1C1D21] font-display tracking-tight">
-              Expert insights from the Team Monsrow team
+              Tech & Engineering Insights from Team Monsrow
             </h2>
           </div>
 
@@ -79,7 +79,7 @@ export default function ResourcesBlog({ onOpenDemo, onOpenWorkflow }: ResourcesB
               </div>
 
               <h3 className="text-base sm:text-lg font-normal text-[#1C1D21] font-display leading-snug">
-                Bypass the buzzwords: 5 ways AI actually prevents fraud
+                Bypass the buzzwords: 5 ways AI actually scales enterprise software
               </h3>
             </div>
 
@@ -125,7 +125,7 @@ export default function ResourcesBlog({ onOpenDemo, onOpenWorkflow }: ResourcesB
               </div>
 
               <h3 className="text-base sm:text-lg font-normal text-[#1C1D21] font-display leading-snug">
-                Data and machine learning in financial fraud prevention
+                Data engineering and machine learning in modern web platforms
               </h3>
             </div>
 
@@ -169,7 +169,7 @@ export default function ResourcesBlog({ onOpenDemo, onOpenWorkflow }: ResourcesB
               </div>
 
               <h3 className="text-base sm:text-lg font-normal text-[#1C1D21] font-display leading-snug">
-                The fusion of authentication and fraud prevention is here. Are you ready for it?
+                The fusion of AI automation and custom app development is here. Are you ready for it?
               </h3>
             </div>
 
@@ -192,7 +192,7 @@ export default function ResourcesBlog({ onOpenDemo, onOpenWorkflow }: ResourcesB
                 Subscribe to the blog
               </h3>
               <p className="text-xs sm:text-sm text-gray-600">
-                Be the first to read Team Monsrow&apos;s latest reports and insights on fraud, identity, and compliance.
+                Be the first to read Team Monsrow&apos;s latest reports and insights on AI engineering, cloud solutions, and digital transformation.
               </p>
             </div>
 

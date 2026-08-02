@@ -2,16 +2,13 @@
 
 import React, { useState } from 'react';
 import { Loader, CustomCursor, TargetCursor } from '@/components/ui';
-import { Navbar, Footer, StoryChapterWrapper } from '@/components/layout';
+import { Navbar, Footer } from '@/components/layout';
 import {
   Hero,
   MetricsGrid,
   RiskManagementTabs,
   PlatformGrid,
-  DataPartners,
   ActionableAiTools,
-  LiveAiRiskSandbox,
-  AudienceSegmentSection,
   WallOfTrust,
   ResourcesBlog,
 } from '@/components/sections';
@@ -58,18 +55,7 @@ export default function Home() {
           onOpenWorkflow={() => setWorkflowOpen(true)}
         />
 
-        <DataPartners
-          onOpenWorkflow={() => setWorkflowOpen(true)}
-        />
-
         <ActionableAiTools
-          onOpenWorkflow={() => setWorkflowOpen(true)}
-        />
-
-        <LiveAiRiskSandbox />
-
-        <AudienceSegmentSection
-          onOpenDemo={() => setDemoOpen(true)}
           onOpenWorkflow={() => setWorkflowOpen(true)}
         />
 
@@ -77,7 +63,6 @@ export default function Home() {
           onOpenDemo={() => setDemoOpen(true)}
           onOpenWorkflow={() => setWorkflowOpen(true)}
         />
-
 
         <ResourcesBlog
           onOpenDemo={() => setDemoOpen(true)}

@@ -10,4 +10,3 @@ export { default as TargetCursor } from './TargetCursor';
 export { default as TrueFocus } from './TrueFocus';
 export { default as GLSLHills, GLSLHills as GLSLHillsNamed } from './glsl-hills';
 export { default as IdentityFingerprintOrbit } from './IdentityFingerprintOrbit';
-

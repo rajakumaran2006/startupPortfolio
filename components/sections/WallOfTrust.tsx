@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 interface WallOfTrustProps {
-  onOpenDemo: () => void;
-  onOpenWorkflow: () => void;
+  onOpenDemo?: () => void;
+  onOpenWorkflow?: () => void;
 }
 
 interface CardItem {
@@ -12,7 +12,7 @@ interface CardItem {
   type: 'metric' | 'quote' | 'award';
   bgColor: string;
   textColor: string;
-  logo?: string;
+  logo: string;
   logoSub?: string;
   stat?: string;
   statLabel?: string;
@@ -21,8 +21,6 @@ interface CardItem {
   role?: string;
   title?: string;
   awardBadge?: React.ReactNode;
-  btnBg?: string;
-  btnText?: string;
 }
 
 export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustProps) {
@@ -34,39 +32,36 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
       type: 'metric',
       bgColor: 'bg-[#FF5A60]',
       textColor: 'text-[#1C1D21]',
-      logo: 'LAUNCH',
-      logoSub: 'CREDIT UNION',
+      logo: 'destylus.',
       stat: '3x',
-      statLabel: 'Digital account opening growth',
-      btnBg: 'bg-[#1C1D21] text-white hover:bg-black',
-      btnText: 'READ CASE STUDY ▶'
+      statLabel: 'Digital application scaling growth',
     },
     {
       id: 2,
       type: 'quote',
       bgColor: 'bg-[#F8BAC0]',
       textColor: 'text-[#1C1D21]',
-      logo: 'Meridian',
-      quote: "Team Monsrow's ability to connect to hundreds of data sources allows us to...create the positive Member experience we strive to deliver while minimizing risk.",
-      author: 'Matthew Seagrim',
-      role: 'Chief Digital and Marketing Officer'
+      logo: 'Hamilton',
+      logoSub: 'LEARNING ACADEMY',
+      quote: "Team Monsrow built our custom web platforms and AI automation tools with exceptional precision and speed.",
+      author: 'Hamilton Academy Director',
+      role: 'Head of Digital Strategy'
     },
     {
       id: 3,
       type: 'metric',
       bgColor: 'bg-[#A31661]',
       textColor: 'text-white',
-      logo: 'incrediblebank',
+      logo: 'aura tech',
       stat: '88%',
-      statLabel: 'Reduction in application review time',
-      btnBg: 'bg-[#F8BAC0] text-[#1C1D21] hover:bg-white',
-      btnText: 'READ CASE STUDY ▶'
+      statLabel: 'Reduction in manual process review time',
     },
     {
       id: 4,
       type: 'award',
       bgColor: 'bg-[#EAE8E3]',
       textColor: 'text-[#1C1D21]',
+      logo: 'ZENITH',
       title: 'Deloitte Technology Fast 500 2025',
       awardBadge: (
         <div className="flex flex-col items-center justify-center my-4">
@@ -84,11 +79,9 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
       type: 'metric',
       bgColor: 'bg-[#A31661]',
       textColor: 'text-white',
-      logo: 'novo',
+      logo: 'Venus School',
       stat: '2x',
-      statLabel: 'Increase in customer conversions',
-      btnBg: 'bg-[#F8BAC0] text-[#1C1D21] hover:bg-white',
-      btnText: 'READ CASE STUDY ▶'
+      statLabel: 'Increase in digital conversion rates',
     }
   ];
 
@@ -98,62 +91,54 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
       type: 'quote',
       bgColor: 'bg-[#EAE8E3]',
       textColor: 'text-[#1C1D21]',
-      logo: 'incrediblebank',
-      quote: "Team Monsrow's automation capabilities drastically increases our scalability.",
-      author: 'Phil Suckow',
-      role: 'VP of Innovation',
-      btnBg: 'bg-[#1C1D21] text-white hover:bg-black',
-      btnText: 'READ CASE STUDY ▶'
+      logo: 'Apex',
+      logoSub: 'GLOBAL TECH',
+      quote: "Team Monsrow's custom software engineering and cloud capabilities drastically increased our enterprise scalability.",
+      author: 'Apex Global Tech Team',
+      role: 'VP of Product Innovation',
     },
     {
       id: 7,
       type: 'metric',
       bgColor: 'bg-[#EAE8E3]',
       textColor: 'text-[#1C1D21]',
-      logo: 'skyla',
-      logoSub: 'CREDIT UNION',
+      logo: 'Nova Core',
       stat: '74%',
-      statLabel: 'Reduction in fraud losses',
-      btnBg: 'bg-[#1C1D21] text-white hover:bg-black',
-      btnText: 'READ CASE STUDY ▶'
+      statLabel: 'Faster time-to-market for enterprise apps',
     },
     {
       id: 8,
       type: 'quote',
       bgColor: 'bg-[#F8BAC0]',
       textColor: 'text-[#1C1D21]',
-      logo: 'LAUNCH',
-      logoSub: 'CREDIT UNION',
-      quote: "Team Monsrow's AI-powered Fraud Attack Radar enables us to act quickly before any loss is incurred.",
-      author: 'Angie Crosby',
-      role: 'VP of PMO',
-      btnBg: 'bg-[#1C1D21] text-white hover:bg-black',
-      btnText: 'READ CASE STUDY ▶'
+      logo: 'Nexus',
+      quote: "Team Monsrow AI-powered platform enables us to deliver high-performance digital services to our clients seamlessly.",
+      author: 'Nexus Lead Architect',
+      role: 'Chief Technology Officer',
     },
     {
       id: 9,
       type: 'quote',
       bgColor: 'bg-[#A31661]',
       textColor: 'text-white',
-      logo: 'LiveOakBank',
-      quote: "Not only does Team Monsrow help us make more informed decisions, it's also faster. Our partnership with Team Monsrow has ensured that our time is spent actually running our business instead of triaging issues, and you can't understate the value of that.",
-      author: 'Joe Thompson',
-      role: 'Head of Live Oak Express',
-      btnBg: 'bg-[#F8BAC0] text-[#1C1D21] hover:bg-white',
-      btnText: 'READ CASE STUDY ▶'
+      logo: 'HYPERION',
+      quote: "Not only does Team Monsrow help us build scalable systems, their team is incredibly fast and reliable.",
+      author: 'HYPERION Tech Lead',
+      role: 'Head of Engineering',
     },
     {
       id: 10,
       type: 'award',
       bgColor: 'bg-[#EAE8E3]',
       textColor: 'text-[#1C1D21]',
-      title: "CNBC World's Top Fintech Companies 2025",
+      logo: 'Crestview',
+      title: "CNBC World's Top Tech Companies 2025",
       awardBadge: (
         <div className="flex flex-col items-center justify-center my-4">
           <div className="w-32 h-24 rounded-lg bg-[#282C35] text-white p-3 flex flex-col items-center justify-center text-center shadow-md relative overflow-hidden border border-amber-500/40">
             <span className="text-[10px] font-bold text-amber-400 tracking-wider">CNBC</span>
             <span className="text-[11px] font-extrabold uppercase leading-tight tracking-tight my-1 text-white">
-              WORLD&apos;S TOP FINTECH
+              WORLD&apos;S TOP TECH
             </span>
             <span className="text-[9px] text-amber-300 font-mono">COMPANIES 2025</span>
             <span className="text-[7px] text-gray-400 mt-1">statista</span>
@@ -170,7 +155,7 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
   const renderCard = (card: CardItem, idx: number) => (
     <div
       key={`${card.id}-${idx}`}
-      className={`w-[280px] sm:w-[320px] h-[370px] sm:h-[390px] ${card.bgColor} ${card.textColor} rounded-2xl p-6 flex flex-col justify-between shrink-0 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-black/5 select-none`}
+      className={`w-[280px] sm:w-[320px] h-[340px] sm:h-[360px] ${card.bgColor} ${card.textColor} rounded-2xl p-6 flex flex-col justify-between shrink-0 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-black/5 select-none`}
     >
       <div>
         {/* Logo */}
@@ -217,24 +202,13 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
         )}
       </div>
 
-      {/* Card Footer */}
-      <div>
-        {card.author && (
-          <div className="mb-3 pt-3 border-t border-current/15">
-            <div className="font-bold text-xs">{card.author}</div>
-            <div className="text-[10px] opacity-70">{card.role}</div>
-          </div>
-        )}
-
-        {card.btnText && (
-          <button
-            onClick={onOpenWorkflow}
-            className={`${card.btnBg} text-[10px] font-bold uppercase tracking-wider px-4 py-2 rounded-full inline-flex items-center gap-1.5 transition-colors cursor-pointer shrink-0`}
-          >
-            <span>{card.btnText}</span>
-          </button>
-        )}
-      </div>
+      {/* Card Footer Author */}
+      {card.author && (
+        <div className="pt-3 border-t border-current/15">
+          <div className="font-bold text-xs">{card.author}</div>
+          <div className="text-[10px] opacity-70">{card.role}</div>
+        </div>
+      )}
     </div>
   );
 
@@ -250,7 +224,7 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
               <span>RESULTS</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-normal text-[#1C1D21] font-display tracking-tight">
-              Built on industry trust from 900+ clients
+              Built on industry trust from 50+ clients
             </h2>
           </div>
 
@@ -261,14 +235,6 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
               title={isPaused ? "Resume Carousel" : "Pause Carousel"}
             >
               <span>{isPaused ? "▶ PLAY" : "⏸ PAUSE"}</span>
-            </button>
-
-            <button
-              onClick={onOpenWorkflow}
-              className="px-6 py-3 rounded-full border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-colors cursor-pointer"
-            >
-              <span>EXPLORE CUSTOMER STORIES</span>
-              <span className="text-[#FF5A60]">▶</span>
             </button>
           </div>
         </div>
@@ -306,5 +272,3 @@ export default function WallOfTrust({ onOpenDemo, onOpenWorkflow }: WallOfTrustP
     </section>
   );
 }
-
-
