@@ -687,60 +687,109 @@ export default function Navbar({ onOpenDemo, onOpenWorkflow, onOpenSearch, onSel
             </div>
           )}
 
-          {/* Mobile Navigation Drawer */}
+          {/* ── MOBILE NAVIGATION DRAWER ── */}
           {mobileOpen && (
-            <div className="lg:hidden mt-4 pt-4 border-t border-[#DCDAD2] space-y-4 animate-in slide-in-from-top duration-200 max-h-[calc(100vh-120px)] overflow-y-auto">
-              <div className="space-y-2">
-                {['platform', 'industries', 'useCases', 'whoWeWorkWith'].map((key) => (
+            <div className="lg:hidden mt-4 pt-4 border-t border-[#DCDAD2] animate-in slide-in-from-top duration-200 max-h-[calc(100vh-120px)] overflow-y-auto pb-4">
+
+              <div className="space-y-1">
+
+                {/* What We Do — expandable */}
+                <div>
                   <button
-                    key={key}
-                    onClick={() => {
-                      setActiveMenu(activeMenu === key ? null : key);
-                    }}
-                    className={`w-full text-left font-bold text-[#1C1D21] text-base py-2 px-3 rounded-xl flex items-center justify-between ${
-                      activeMenu === key ? 'bg-[#E4E2DC]' : 'hover:bg-[#E4E2DC]/50'
+                    onClick={() => setActiveMenu(activeMenu === 'platform' ? null : 'platform')}
+                    className={`w-full text-left font-semibold text-[#1C1D21] text-sm py-3 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                      activeMenu === 'platform' ? 'bg-[#E4E2DC]' : 'hover:bg-[#E4E2DC]/60'
                     }`}
                   >
-                    <span className="capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
-                    {activeMenu === key ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    <span>What We Do</span>
+                    {activeMenu === 'platform' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  </button>
+                  {activeMenu === 'platform' && (
+                    <div className="ml-3 mt-1 space-y-0.5 border-l-2 border-[#DCDAD2] pl-3">
+                      {[
+                        { label: 'Software Development', slug: 'software-development' },
+                        { label: 'Business Solutions', slug: 'business-solutions' },
+                        { label: 'Artificial Intelligence', slug: 'artificial-intelligence' },
+                        { label: 'Factory Automation', slug: 'factory-iot' },
+                        { label: 'Cloud Infrastructure', slug: 'cloud-infrastructure' },
+                        { label: 'Digital Marketing', slug: 'digital-marketing' },
+                      ].map((item) => (
+                        <button
+                          key={item.slug}
+                          onClick={() => { closeMenus(); router.push(`/service/${item.slug}`); }}
+                          className="w-full text-left text-sm text-[#1C1D21] py-2 px-2 rounded-lg hover:bg-[#E4E2DC]/60 transition-colors cursor-pointer"
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Industries — expandable */}
+                <div>
+                  <button
+                    onClick={() => setActiveMenu(activeMenu === 'industries' ? null : 'industries')}
+                    className={`w-full text-left font-semibold text-[#1C1D21] text-sm py-3 px-3 rounded-xl flex items-center justify-between transition-colors ${
+                      activeMenu === 'industries' ? 'bg-[#E4E2DC]' : 'hover:bg-[#E4E2DC]/60'
+                    }`}
+                  >
+                    <span>Industries</span>
+                    {activeMenu === 'industries' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  </button>
+                  {activeMenu === 'industries' && (
+                    <div className="ml-3 mt-1 space-y-0.5 border-l-2 border-[#DCDAD2] pl-3">
+                      {[
+                        { label: 'Manufacturing & Industrial', slug: 'manufacturing' },
+                        { label: 'Healthcare & Life Sciences', slug: 'healthcare' },
+                        { label: 'Education & EdTech', slug: 'education' },
+                        { label: 'Finance & Banking', slug: 'finance' },
+                        { label: 'SaaS & Enterprise Tech', slug: 'saas' },
+                        { label: 'Retail & E-Commerce', slug: 'ecommerce' },
+                      ].map((item) => (
+                        <button
+                          key={item.slug}
+                          onClick={() => { closeMenus(); router.push(`/industries/${item.slug}`); }}
+                          className="w-full text-left text-sm text-[#1C1D21] py-2 px-2 rounded-lg hover:bg-[#E4E2DC]/60 transition-colors cursor-pointer"
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Direct Links */}
+                {[
+                  { label: 'Careers', path: '/careers' },
+                  { label: 'About Us', path: '/about' },
+                  { label: 'Contact Us', path: '/contact' },
+                ].map((link) => (
+                  <button
+                    key={link.path}
+                    onClick={() => { soundFX.playClick(); closeMenus(); router.push(link.path); }}
+                    className="w-full text-left font-semibold text-[#1C1D21] text-sm py-3 px-3 rounded-xl hover:bg-[#E4E2DC]/60 transition-colors cursor-pointer"
+                  >
+                    {link.label}
                   </button>
                 ))}
+
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="pt-4 mt-4 border-t border-[#DCDAD2] space-y-2">
                 <button
-                  onClick={() => {
-                    closeMenus();
-                    router.push('/about');
-                  }}
-                  className="w-full text-left font-bold text-[#1C1D21] text-base py-2 px-3 rounded-xl block hover:bg-[#E4E2DC]/50 transition-colors cursor-pointer"
+                  onClick={() => { closeMenus(); onOpenDemo(); }}
+                  className="w-full bg-[#1C1D21] hover:bg-[#FF5A60] text-white text-xs font-bold uppercase tracking-wider py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
-                  About Us
+                  <span>SCHEDULE A DEMO</span>
+                  <span>▶</span>
                 </button>
               </div>
 
-              <div className="pt-2 space-y-2 border-t border-gray-200">
-                <button
-                  onClick={() => {
-                    closeMenus();
-                    onOpenWorkflow();
-                  }}
-                  className="w-full bg-[#E4E2DC] text-[#1C1D21] text-xs font-bold uppercase tracking-wider py-3 rounded-full flex items-center justify-center gap-2"
-                >
-                  <Play className="w-3.5 h-3.5 fill-current" />
-                  <span>Interactive Decision Builder</span>
-                </button>
-                
-                <button
-                  onClick={() => {
-                    closeMenus();
-                    onOpenDemo();
-                  }}
-                  className="w-full bg-[#1C1D21] text-white text-xs font-bold uppercase tracking-wider py-3 rounded-full flex items-center justify-center gap-2"
-                >
-                  <span>SCHEDULE A DEMO</span>
-                  <span className="text-white">▶</span>
-                </button>
-              </div>
             </div>
           )}
+
 
         </div>
       </header>
