@@ -15,8 +15,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Team Monsrow | Full-lifecycle identity & fraud intelligence platform',
+  title: 'Team Monsrow',
   description: 'Team Monsrow is the AI-powered identity and fraud decision platform that accelerates onboarding, stops fraud, and simplifies compliance across the customer lifecycle.',
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
 };
 
 import { GlobalAudioListener } from '@/components/ui';

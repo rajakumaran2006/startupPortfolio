@@ -219,7 +219,7 @@ export default function ServicePage() {
                 {/* Bottom Action Button */}
                 <div className="pt-6">
                   <button
-                    onClick={() => setWorkflowOpen(true)}
+                    onClick={() => router.push('/contact')}
                     className="bg-transparent border border-current text-current text-[10px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full inline-flex items-center gap-2 transition-all cursor-pointer hover:bg-black/10"
                   >
                     <span>LEARN MORE</span>

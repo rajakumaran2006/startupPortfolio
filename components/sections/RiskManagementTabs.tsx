@@ -466,9 +466,7 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                     <div className="flex items-center justify-between pb-2">
                       <div className="flex items-center gap-2">
                         <span className="font-extrabold text-lg tracking-tight text-[#1C1D21]">AI Risk Signal</span>
-
                       </div>
-                      <span className="text-xs font-semibold text-[#FF5A60]">Rahul Sharma (+91 98765 43210)</span>
                     </div>
 
                     {/* Time-Series Line Graph SVG */}
@@ -510,22 +508,6 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                       </svg>
                     </div>
 
-                    {/* Chart Legend Pills Row */}
-                    <div className="flex flex-wrap items-center gap-2 text-[10px] sm:text-xs pt-1 pb-3 text-gray-600">
-                      <span className="bg-teal-50 text-teal-700 px-2 py-0.5 rounded font-medium flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-teal-400" /> Optimal Speed
-                      </span>
-                      <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded font-medium flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-amber-400" /> ₹25Cr+ Processed
-                      </span>
-                      <span className="bg-red-50 text-red-700 px-2 py-0.5 rounded font-medium flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-red-500" /> High Traffic
-                      </span>
-                      <span className="text-blue-600 flex items-center gap-1 font-semibold">
-                        <Zap className="w-2.5 h-2.5" /> Live Node
-                      </span>
-                    </div>
-
                     {/* Bottom Risk Indicators Grid */}
                     <div className="pt-2 border-t border-gray-100">
                       <div className="flex items-center gap-1 text-[10px] text-gray-500 font-semibold mb-2">
@@ -540,7 +522,7 @@ export default function RiskManagementTabs({ onOpenDemo, onOpenWorkflow }: RiskM
                         </div>
                         <div className="bg-gray-100/90 text-gray-800 px-3 py-1.5 rounded-lg flex items-center gap-2 font-medium">
                           <Activity className="w-3.5 h-3.5 text-emerald-600" />
-                          <span className="truncate">+91 98765 43210 (Verified)</span>
+                          <span className="truncate">Identity Stream (Verified)</span>
                         </div>
                         <div className="bg-gray-100/90 text-gray-800 px-3 py-1.5 rounded-lg flex items-center gap-2 font-medium">
                           <Activity className="w-3.5 h-3.5 text-emerald-600" />

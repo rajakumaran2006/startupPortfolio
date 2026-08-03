@@ -33,7 +33,7 @@ export default function AboutPage() {
 
   const leadershipTeam = [
     {
-      name: 'Vivin M',
+      name: 'Apoorvasri M',
       title: 'Team Lead',
       img: '/assets/founder-ceo.png',
       hasImage: true,
@@ -54,12 +54,12 @@ export default function AboutPage() {
       hasImage: false,
     },
     {
-      name: 'Vishwa',
+      name: 'Vishwa V',
       title: 'AI Developer',
       hasImage: false,
     },
     {
-      name: 'Suman Karthick',
+      name: 'Suman Karthick T A',
       title: 'Software Developer',
       hasImage: false,
     },
@@ -204,24 +204,13 @@ export default function AboutPage() {
             {/* Founder & CEO Card (With Photo) */}
             {leadershipTeam.filter(m => m.hasImage).map((member, idx) => (
               <div key={idx} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E0D8] shadow-xs grid grid-cols-1 sm:grid-cols-12 gap-6 items-center group">
-                <div className="sm:col-span-5 relative aspect-4/5 rounded-2xl overflow-hidden bg-gray-200 border border-black/5 shadow-xs">
-                  <Image
-                    src={member.img!}
-                    alt={member.name}
-                    fill
-                    className="object-cover scale-150 transition-transform duration-700 ease-in-out"
-                  />
-                </div>
                 <div className="sm:col-span-7 space-y-3">
                   <span className="inline-block px-3 py-1 bg-[#FF5A60] text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
-                    FOUNDER &amp; CEO
+                    Team Lead
                   </span>
                   <h3 className="text-2xl font-bold font-display text-[#1C1D21]">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-gray-600 font-normal">
-                    {member.title}
-                  </p>
                   <p className="text-xs text-gray-500 leading-relaxed font-normal">
                     Leading Team Monsrow's strategic vision, enterprise software innovations, and AI engineering operations worldwide.
                   </p>

@@ -1,17 +1,23 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 interface ActionableAiToolsProps {
-  onOpenWorkflow: () => void;
+  onOpenWorkflow?: () => void;
 }
 
 export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsProps) {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    router.push('/contact');
+  };
+
   return (
     <section id="actionable-ai" className="bg-[#F5F4F0] py-16 lg:py-24 border-b border-[#E2E0D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header matching Image 5 */}
         {/* Header matching Image 5 */}
         <div className="mb-12 space-y-3 max-w-3xl">
           <div className="flex items-center gap-1.5 text-[#FF5A60] font-bold text-xs uppercase tracking-widest">
@@ -82,8 +88,8 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
             </div>
 
             <button
-              onClick={onOpenWorkflow}
-              className="bg-transparent border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-full inline-flex items-center gap-1.5 transition-colors w-fit cursor-pointer"
+              onClick={handleRedirect}
+              className="bg-transparent border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-full inline-flex items-center gap-1.5 transition-colors w-fit cursor-pointer mt-auto"
             >
               <span>SEE HOW IT WORKS</span>
               <span className="text-[#FF5A60] text-[10px]">▶</span>
@@ -130,8 +136,8 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
             </div>
 
             <button
-              onClick={onOpenWorkflow}
-              className="bg-transparent border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-full inline-flex items-center gap-1.5 transition-colors w-fit cursor-pointer"
+              onClick={handleRedirect}
+              className="bg-transparent border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-full inline-flex items-center gap-1.5 transition-colors w-fit cursor-pointer mt-auto"
             >
               <span>SEE HOW IT WORKS</span>
               <span className="text-[#FF5A60] text-[10px]">▶</span>
@@ -179,8 +185,8 @@ export default function ActionableAiTools({ onOpenWorkflow }: ActionableAiToolsP
             </div>
 
             <button
-              onClick={onOpenWorkflow}
-              className="bg-transparent border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-full inline-flex items-center gap-1.5 transition-colors w-fit cursor-pointer"
+              onClick={handleRedirect}
+              className="bg-transparent border border-[#1C1D21] hover:bg-[#1C1D21] hover:text-white text-[#1C1D21] text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-full inline-flex items-center gap-1.5 transition-colors w-fit cursor-pointer mt-auto"
             >
               <span>SEE HOW IT WORKS</span>
               <span className="text-[#FF5A60] text-[10px]">▶</span>

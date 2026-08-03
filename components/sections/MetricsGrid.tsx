@@ -115,7 +115,7 @@ export default function MetricsGrid() {
               className={`${item.bgColor} rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-md hover:shadow-2xl transition-all duration-300 min-h-[420px] text-[#1C1D21] relative cursor-pointer group`}
             >
               {/* Top Section: Metric & Label */}
-              <div>
+              <div className="flex-1 flex flex-col">
                 <div className="text-6xl sm:text-7xl lg:text-8xl font-normal font-sans tracking-tight text-[#1C1D21] leading-none mb-4 group-hover:scale-105 transition-transform duration-300 transform-gpu origin-left">
                   {item.metric}
                 </div>
@@ -124,8 +124,8 @@ export default function MetricsGrid() {
                 </p>
               </div>
 
-              {/* Middle Section: View Service Pill Button */}
-              <div className="pt-6">
+              {/* Middle Section: View Service Pill Button (Horizontally aligned across all cards) */}
+              <div className="pt-6 mt-auto">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
